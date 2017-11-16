@@ -1,6 +1,8 @@
 var mysql = require('mysql');
 
-require("jsdom").env("", function (err, window) {
+var jsdom = require("jsdom");
+
+jsdom.env("", function (err, window) {
   if (err) {
     console.error(err);
     return;
