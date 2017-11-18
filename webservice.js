@@ -1,30 +1,26 @@
+var request = require("request");
+
 var conn = {
   host: 'localhost',
   user: 'root',
   password: 'root'
 };
-var knex = require('knex')({
-  client: 'mysql',
-  connection: conn
-});
+var knex = require('knex')({client: 'mysql', connection: conn});
 
 knex.raw('CREATE DATABASE IF NOT EXISTS radar')
   .then(function () {
     knex.destroy();
 
     conn.database = 'radar';
-    knex = require('knex')({
-      client: 'mysql',
-      connection: conn
-    });
+    knex = require('knex')({client: 'mysql', connection: conn });
 
     knex.schema.createTableIfNotExists('track', function (table) {
-        table.integer('id').primary();
-        table.dateTime('date')
-        table.double('latitude')
-        table.double('longitude')
-        table.double('altitude')
-        table.double('speed')
+        table.integer('id').primary(); //Id
+        table.dateTime('date') //PosTime
+        table.double('latitude') //Lat
+        table.double('longitude') //Long
+        table.double('altitude') //Alt
+        table.double('speed') //Spd
       })
       .then(function () {
         knex.schema.createTableIfNotExists('aircraft', function (table) {
@@ -37,7 +33,33 @@ knex.raw('CREATE DATABASE IF NOT EXISTS radar')
             table.foreign('id_flight').references('track.id')
           })
           .then(function () {
+            updateData();
             knex.destroy();
+
+            /*******************/
+            //DEBUG
+            conn.database = null;
+            knex = require('knex')({client: 'mysql', connection: conn });
+            knex.raw('DROP DATABASE radar')
+            .then(function () {
+              knex.destroy();
+            });
+            /*******************/
           });
       });
   });
+
+function updateData() {
+  var lat = 46.0
+  var lng = 11.0
+  var fDstL = 0
+  var fDstU = 100
+  var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
+
+  request({
+    url: url,
+    json: true
+  }, function (error, response, body) {
+    
+  });
+}
