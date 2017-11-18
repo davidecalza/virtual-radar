@@ -11,6 +11,7 @@ var knex = require('knex')({
 });
 
 var id_st = [];
+var aircrafts = [];
 
 knex.raw('CREATE DATABASE IF NOT EXISTS radar')
   .then(function () {
@@ -41,12 +42,11 @@ knex.raw('CREATE DATABASE IF NOT EXISTS radar')
             table.foreign('id_flight').references('track.id')
           })
           .then(function () {
+            knex.destroy();
 
-            setInterval(function(){
+            setInterval(function () {
               updateData();
             }, 3000);
-            
-            knex.destroy();
 
             /*******************/
             //DEBUG
@@ -70,6 +70,7 @@ function updateData() {
   var fDstL = 0
   var fDstU = 100
   var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
+  aircrafts = []
 
   process.stdout.write('\033c');
 
@@ -79,27 +80,64 @@ function updateData() {
   }, function (error, response, body) {
 
     var data = body.acList
-    var id_tmp = []      
+    var id_tmp = []    
 
     for (var i in data) {
       id_tmp.push(data[i].Icao)
-      if(!id_st.includes(data[i].Icao)){ //aircraft id is not in the db yet       
-        id_st.push(data[i].Icao)     
-        //add aircraft to db       
-      }
-    }      
+      if (!id_st.includes(data[i].Icao)) { //aircraft id is not in the db yet       
+        id_st.push(data[i].Icao)
 
-    console.log(id_st.length)
+        //add aircraft to db  
+        var aircraft = {
+          id: data[i].Icao,
+          name: data[i].Mdl,
+          company: data[i].Op,
+          id_flight: data[i].Id,
+          airport_from: data[i].From,
+          airport_to: data[i].To
+        }
 
-    for (var i in id_tmp){
-      if(!id_tmp.includes(id_st[i])){ //aircraft is out of the range
-        id_st.splice(id_st.indexOf(id_st[1]),1); 
-        //delete aircraft from db
+        aircrafts.push(aircraft)
       }
     }
 
-    console.log(id_st.length)
+    for (var i in id_tmp) {
+      if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
+        id_st.splice(id_st.indexOf(id_st[1]), 1);
 
-  });
+        //delete aircraft from db
+
+      }
+    }
+
+    insertData(aircrafts, 'aircraft')
+    //knex.select().table('aircraft')
+  })
 }
 
+function insertManager(array1, array2, table1, table2) {
+  insertData(array1, table1)
+  insertData(array2, table2)
+}
+
+function insertData(array, table) {
+  
+  console.log(array.length)
+
+  for (var i in array) {
+
+    conn.database = 'radar'
+    knex = require('knex')({
+      client: 'mysql',
+      connection: conn
+    });
+
+    knex.insert(array[i]).into(table)
+      .then(function (id) {
+        knex.destroy();
+        console.log("INSERT")
+      })
+
+  }
+
+}
