@@ -12,6 +12,7 @@ var knex = require('knex')({
 
 var id_st = [];
 var aircrafts = [];
+var ins_aircraft = [];
 
 knex.raw('CREATE DATABASE IF NOT EXISTS radar')
   .then(function () {
@@ -36,30 +37,18 @@ knex.raw('CREATE DATABASE IF NOT EXISTS radar')
             table.string('id').primary() //Icao
             table.string('name') //Mdl
             table.string('company') //Op
-            table.integer('id_flight') //Id
+            table.integer('id_flight'); //Id
             table.string('airport_from') //From
             table.string('airport_to') //To
-            table.foreign('id_flight').references('track.id')
           })
           .then(function () {
             knex.destroy();
 
+            console.log("CONNECTION CREATED")
+
             setInterval(function () {
               updateData();
-            }, 3000);
-
-            /*******************/
-            //DEBUG
-            conn.database = null;
-            knex = require('knex')({
-              client: 'mysql',
-              connection: conn
-            });
-            knex.raw('DROP DATABASE radar')
-              .then(function () {
-                knex.destroy();
-              });
-            /*******************/
+            }, 3000);            
           });
       });
   });
@@ -70,9 +59,8 @@ function updateData() {
   var fDstL = 0
   var fDstU = 100
   var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
-  aircrafts = []
 
-  process.stdout.write('\033c');
+  //process.stdout.write('\033c');
 
   request({
     url: url,
@@ -80,11 +68,12 @@ function updateData() {
   }, function (error, response, body) {
 
     var data = body.acList
-    var id_tmp = []    
+    var id_tmp = []
 
     for (var i in data) {
       id_tmp.push(data[i].Icao)
-      if (!id_st.includes(data[i].Icao)) { //aircraft id is not in the db yet       
+      if (!id_st.includes(data[i].Icao)) { //aircraft id is not in the db yet   
+        console.log("NEW AIRCRAFT: " + data[i].Icao)    
         id_st.push(data[i].Icao)
 
         //add aircraft to db  
@@ -98,46 +87,39 @@ function updateData() {
         }
 
         aircrafts.push(aircraft)
+        insert(aircraft, 'aircraft')
       }
     }
 
-    for (var i in id_tmp) {
+    for (var i in id_st) {
       if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        id_st.splice(id_st.indexOf(id_st[1]), 1);
-
-        //delete aircraft from db
-
+        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])
+        id_st.splice(i, 1);
+        aircrafts.splice(i, 1);
       }
     }
 
-    insertData(aircrafts, 'aircraft')
     //knex.select().table('aircraft')
   })
 }
 
-function insertManager(array1, array2, table1, table2) {
-  insertData(array1, table1)
-  insertData(array2, table2)
+/* 
+  Insert
+  inserts a row into a table 
+  row --> row of the table (instance)
+  table --> table of the db
+*/
+function insert(row, table) {
+  conn.database = 'radar'
+  knex = require('knex')({
+    client: 'mysql',
+    connection: conn
+  });
+
+  knex.insert(row).into(table)
+    .then(function (id) {
+      knex.destroy();
+    })
 }
 
-function insertData(array, table) {
-  
-  console.log(array.length)
-
-  for (var i in array) {
-
-    conn.database = 'radar'
-    knex = require('knex')({
-      client: 'mysql',
-      connection: conn
-    });
-
-    knex.insert(array[i]).into(table)
-      .then(function (id) {
-        knex.destroy();
-        console.log("INSERT")
-      })
-
-  }
-
-}
+//FUNCTION REMOVE
