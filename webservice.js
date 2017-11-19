@@ -1,3 +1,11 @@
+/*
+  TO-DO and ISSUES
+  - database already present issue fix
+  - aircraft remove
+  - track insert and remove
+  - track update
+*/
+
 var request = require("request");
 
 var conn = {
@@ -99,7 +107,6 @@ function updateData() {
       }
     }
 
-    //knex.select().table('aircraft')
   })
 }
 
