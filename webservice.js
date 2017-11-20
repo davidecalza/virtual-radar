@@ -1,6 +1,5 @@
 /*
   TO-DO and ISSUES
-  - database already present issue fix
   - track insert and remove
   - track update
 */
