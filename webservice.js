@@ -2,6 +2,7 @@
   TO-DO and ISSUES
   - track insert and remove
   - track update
+  - insert Reg into Aircraft table
 */
 
 var request = require("request");
