@@ -1,64 +1,35 @@
 /*
   TO-DO and ISSUES
   - database already present issue fix
-  - aircraft remove
   - track insert and remove
   - track update
 */
 
 var request = require("request");
+var id_st = [];
+var aircrafts = [];
+var ins_aircraft = [];
 
 var conn = {
   host: 'localhost',
   user: 'root',
-  password: 'root'
+  password: 'root',
+  database: 'radar'
 };
 var knex = require('knex')({
   client: 'mysql',
   connection: conn
 });
 
-var id_st = [];
-var aircrafts = [];
-var ins_aircraft = [];
 
-knex.raw('CREATE DATABASE IF NOT EXISTS radar')
-  .then(function () {
-    knex.destroy();
+setInterval(function () {
+  updateData();
+}, 3000);
 
-    conn.database = 'radar';
-    knex = require('knex')({
-      client: 'mysql',
-      connection: conn
-    });
-
-    knex.schema.createTableIfNotExists('track', function (table) {
-      table.integer('id').primary(); //Id
-      table.dateTime('date') //PosTime
-      table.double('latitude') //Lat
-      table.double('longitude') //Long
-      table.double('altitude') //Alt
-      table.double('speed') //Spd
-    })
-      .then(function () {
-        knex.schema.createTableIfNotExists('aircraft', function (table) {
-          table.string('id').primary() //Icao
-          table.string('name') //Mdl
-          table.string('company') //Op
-          table.integer('id_flight'); //Id
-          table.string('airport_from') //From
-          table.string('airport_to') //To
-        })
-          .then(function () {
-            knex.destroy();
-
-            setInterval(function () {
-              updateData();
-            }, 3000);
-          });
-      });
-  });
-
+/* 
+  updateData
+  downloads JSON data and manages db data
+*/
 function updateData() {
   var lat = 46.0
   var lng = 11.0
@@ -99,7 +70,7 @@ function updateData() {
 
     for (var i in id_st) {
       if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])        
+        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])
         remove('id', id_st[i], 'aircraft')
         id_st.splice(i, 1);
         aircrafts.splice(i, 1);
