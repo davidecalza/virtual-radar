@@ -31,7 +31,7 @@ var conn = {
             table.string('id').primary() //Icao
             table.string('name') //Mdl
             table.string('company') //Op
-            table.integer('id_flight'); //Id
+            table.integer('id_flight').notNullable().references('id').inTable('track'); //Id
             table.string('airport_from') //From
             table.string('airport_to') //To
           })
