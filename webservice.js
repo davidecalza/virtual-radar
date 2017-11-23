@@ -50,13 +50,14 @@ function updateData() {
     for (var i in data) {
       id_tmp.push(data[i].Icao)
       if (!id_st.includes(data[i].Icao)) { //aircraft id is not in the db yet   
-        console.log("NEW AIRCRAFT: " + data[i].Icao)
+        console.log("NEW AIRCRAFT: " + data[i].Reg)
         id_st.push(data[i].Icao)
 
         //add aircraft to db  
         var aircraft = {
           id: data[i].Icao,
           name: data[i].Mdl,
+          reg: data[i].Reg,
           company: data[i].Op,
           id_flight: data[i].Id,
           airport_from: data[i].From,
@@ -70,7 +71,7 @@ function updateData() {
 
     for (var i in id_st) {
       if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])
+        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].reg)
         remove('id', id_st[i], 'aircraft')
         id_st.splice(i, 1);
         aircrafts.splice(i, 1);

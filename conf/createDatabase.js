@@ -29,6 +29,7 @@ var conn = {
         .then(function () {
           knex.schema.createTableIfNotExists('aircraft', function (table) {
             table.string('id').primary() //Icao
+            table.string('reg') //Reg
             table.string('name') //Mdl
             table.string('company') //Op
             table.integer('id_flight')//.notNullable().references('id').inTable('track'); //Id
