@@ -96,7 +96,7 @@ function insert(row, table) {
 
   knex.insert(row).into(table)
     .then(function (id) {
-      console.log("DB INSERT: " + row.name)
+      console.log("DB INSERT: " + row.Reg)
       knex.destroy();
     })
 }
