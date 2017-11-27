@@ -24,7 +24,7 @@ var knex = require('knex')({
 
 setInterval(function () {
   updateData();
-}, 3000);
+}, 10000);
 
 /* 
   updateData
