@@ -1,6 +1,5 @@
 /*
   TO-DO and ISSUES
-  - BUG: too many connections
 */
 
 var request = require("request");
@@ -43,6 +42,12 @@ function updateData() {
     url: url,
     json: true
   }, function (error, response, body) {
+
+
+    knex = require('knex')({
+      client: 'mysql',
+      connection: conn
+    });
 
     var data = body.acList
     var id_tmp = []
@@ -95,6 +100,8 @@ function updateData() {
       }
     }
 
+    knex.destroy();
+
   })
 }
 
@@ -105,15 +112,9 @@ function updateData() {
   table --> table of the db
 */
 function insert(row, table) {
-  knex = require('knex')({
-    client: 'mysql',
-    connection: conn
-  });
-
   knex.insert(row).into(table)
     .then(function (id) {
       //console.log("DB INSERT: " + row.id)
-      knex.destroy();
     })
 }
 
@@ -125,17 +126,11 @@ function insert(row, table) {
   condition --> condition of the field 
 */
 function remove(field, condition, table) {
-  knex = require('knex')({
-    client: 'mysql',
-    connection: conn
-  });
-
-  knex(table)
+    knex(table)
     .where(field, condition)
     .del()
     .then(function (id) {
       //console.log("DB remove: " + field + "_" + condition)
-      knex.destroy();
     })
 }
 
@@ -147,11 +142,6 @@ function remove(field, condition, table) {
   condition --> condition of the field 
 */
 function update(field, condition, table, long, lat, alt, spd, time) {
-  knex = require('knex')({
-    client: 'mysql',
-    connection: conn
-  });
-
   knex(table)
     .where(field, condition) //Id
     .update({
@@ -163,10 +153,5 @@ function update(field, condition, table, long, lat, alt, spd, time) {
     })
     .then(function (id) {
       //console.log("DB updated: " + field + "_" + condition)
-      console.log("Id: " + condition)
-      console.log("LONG: " + long)
-      console.log("LAT: " + lat)
-      console.log()
-      knex.destroy();
     })
 }
