@@ -50,7 +50,7 @@ function updateData() {
     for (var i in data) {
       id_tmp.push(data[i].Icao)
       if (!id_st.includes(data[i].Icao)) { //aircraft id is not in the db yet   
-        console.log("NEW AIRCRAFT: " + data[i].Reg)
+        console.log("NEW AIRCRAFT: " + data[i].Icao)
         id_st.push(data[i].Icao)
 
         //add aircraft to db  
@@ -71,7 +71,7 @@ function updateData() {
 
     for (var i in id_st) {
       if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].reg)
+        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].id)
         remove('id', id_st[i], 'aircraft')
         id_st.splice(i, 1);
         aircrafts.splice(i, 1);
@@ -96,7 +96,7 @@ function insert(row, table) {
 
   knex.insert(row).into(table)
     .then(function (id) {
-      console.log("DB INSERT: " + row.Reg)
+      console.log("DB INSERT: " + row.id)
       knex.destroy();
     })
 }
