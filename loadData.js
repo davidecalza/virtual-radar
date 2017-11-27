@@ -1,12 +1,9 @@
 /*
   TO-DO and ISSUES
-  - track insert and remove
-  - track update
+  - BUG: too many connections
 */
 
 var request = require("request");
-var moment = require('moment');
-moment().format();
 /*********Aircrafts**********/
 var id_st = [];
 var aircrafts = [];
@@ -40,7 +37,7 @@ function updateData() {
   var fDstU = 100
   var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
 
-  //process.stdout.write('\033c');
+  process.stdout.write('\033c');
 
   request({
     url: url,
@@ -54,7 +51,7 @@ function updateData() {
       id_tmp.push(data[i].Id)
 
       if (!id_st.includes(data[i].Id)) { //aircraft id is not in the db yet   
-        console.log("NEW AIRCRAFT: " + data[i].Id)
+        //console.log("NEW AIRCRAFT: " + data[i].Id)
         id_st.push(data[i].Id)
 
         //add aircraft to db  
@@ -84,13 +81,13 @@ function updateData() {
         insert(track, 'track')
       }
       
-      update('id', data[i].Id, 'track', data[i].Long, data[i].Lat, data[i].Alt, data[i].Spd, date_parse);
+      update('id', data[i].Id, 'track', data[i].Long, data[i].Lat, data[i].Alt, data[i].Spd, date_parse);      
 
     }
 
     for (var i in id_st) {
       if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].id)
+        //console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].id)
         remove('id_flight', id_st[i], 'aircraft')
         remove('id', id_st[i], 'track')
         id_st.splice(i, 1);
@@ -115,7 +112,7 @@ function insert(row, table) {
 
   knex.insert(row).into(table)
     .then(function (id) {
-      console.log("DB INSERT: " + row.id)
+      //console.log("DB INSERT: " + row.id)
       knex.destroy();
     })
 }
@@ -137,7 +134,7 @@ function remove(field, condition, table) {
     .where(field, condition)
     .del()
     .then(function (id) {
-      console.log("DB remove: " + field + "_" + condition)
+      //console.log("DB remove: " + field + "_" + condition)
       knex.destroy();
     })
 }
@@ -165,7 +162,11 @@ function update(field, condition, table, long, lat, alt, spd, time) {
       speed: spd
     })
     .then(function (id) {
-      console.log("DB updated: " + field + "_" + condition)
+      //console.log("DB updated: " + field + "_" + condition)
+      console.log("Id: " + condition)
+      console.log("LONG: " + long)
+      console.log("LAT: " + lat)
+      console.log()
       knex.destroy();
     })
 }
