@@ -1,13 +1,11 @@
 /*
-  TO-DO and ISSUES
+  TO-DO and ISSUES:
+  ...
 */
 
 var request = require("request");
-/*********Aircrafts**********/
-var id_st = [];
-var aircrafts = [];
-var ins_aircraft = [];
-/****************************/
+
+var id_st = []; //Ids of aircrafts in the database 
 
 var conn = {
   host: 'localhost',
@@ -22,27 +20,22 @@ var knex = require('knex')({
 
 
 setInterval(function () {
-  updateData();
-}, 10000);
+  updateData(46.0, 11.0, 0, 100); 
+}, 3000);
 
-/* 
-  updateData
-  downloads JSON data and manages db data
+/*  updateData
+    downloads JSON data and manages db data
 */
-function updateData() {
-  var lat = 46.0
-  var lng = 11.0
-  var fDstL = 0
-  var fDstU = 100
+function updateData(lat, lng, fDstL, fDstU) {
+
   var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
 
-  process.stdout.write('\033c');
+  //process.stdout.write('\033c');
 
   request({
     url: url,
     json: true
   }, function (error, response, body) {
-
 
     knex = require('knex')({
       client: 'mysql',
@@ -50,17 +43,18 @@ function updateData() {
     });
 
     var data = body.acList
-    var id_tmp = []
+    var id_tmp = [] //check if an aircraft got out of the range
 
-    for (var i in data) {
+    for (var i in data) { //loop on the lists of aircrafts in the range right now
+      
       id_tmp.push(data[i].Id)
 
-      if (!id_st.includes(data[i].Id)) { //aircraft id is not in the db yet   
-        //console.log("NEW AIRCRAFT: " + data[i].Id)
+      if (!id_st.includes(data[i].Id)) { //aircraft ID is not in the db yet 
+          
+        console.log("NEW AIRCRAFT: " + data[i].Icao)
         id_st.push(data[i].Id)
 
-        //add aircraft to db  
-        var aircraft = {
+        var aircraft = { //aircraft object to add to the db
           id: data[i].Icao,
           name: data[i].Mdl,
           reg: data[i].Reg,
@@ -68,35 +62,39 @@ function updateData() {
           id_flight: data[i].Id,
           airport_from: data[i].From,
           airport_to: data[i].To
-        }
-        
-        var date_parse = new Date(data[i].PosTime) 
+        }        
 
-        var track = {
+        var track = { //track object to add to the db
           id: data[i].Id,
-          date_track: date_parse,
+          date_track: new Date(data[i].PosTime),
           latitude: data[i].Lat,
           longitude: data[i].Long,
           altitude: data[i].Alt,
           speed: data[i].Spd
         }
 
-        aircrafts.push(aircraft)
         insert(aircraft, 'aircraft')
         insert(track, 'track')
       }
+
+      var update_row = { //track object to update
+        date_track: new Date(data[i].PosTime) ,
+        latitude: data[i].Lat,
+        longitude: data[i].Long,
+        altitude: data[i].Alt,
+        speed: data[i].Spd
+      }
       
-      update('id', data[i].Id, 'track', data[i].Long, data[i].Lat, data[i].Alt, data[i].Spd, date_parse);      
+      update('id', data[i].Id, 'track', update_row);      
 
     }
 
-    for (var i in id_st) {
-      if (!id_tmp.includes(id_st[i])) { //aircraft is out of the range
-        //console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + aircrafts[i].id)
+    for (var i in id_st) { //check and compare if aircrafts in the db are the same as the ones in the range right now
+      if (!id_tmp.includes(id_st[i])) { //aircraft got out of the range
+        console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])
         remove('id_flight', id_st[i], 'aircraft')
         remove('id', id_st[i], 'track')
         id_st.splice(i, 1);
-        aircrafts.splice(i, 1);
       }
     }
 
@@ -105,11 +103,10 @@ function updateData() {
   })
 }
 
-/* 
-  Insert
-  inserts a row into a table 
-  row --> row of the table (instance)
-  table --> table of the db
+/*  Insert
+    inserts a row into a table 
+    row   --> row of the table (instance)
+    table --> table of the db
 */
 function insert(row, table) {
   knex.insert(row).into(table)
@@ -118,12 +115,11 @@ function insert(row, table) {
     })
 }
 
-/* 
-  Remove
-  removes a row of a table 
-  row --> row of the table (instance)
-  field --> field of the row to remove
-  condition --> condition of the field 
+/*  Remove
+    removes a row of a table 
+    field     --> field of the row to remove
+    condition --> condition of the field 
+    table     --> table of the db
 */
 function remove(field, condition, table) {
     knex(table)
@@ -134,23 +130,17 @@ function remove(field, condition, table) {
     })
 }
 
-/* 
-  Update
-  Updates a row of a table 
-  row --> row of the table (instance)
-  field --> field of the row to remove
-  condition --> condition of the field 
+/*  Update
+    updates a row of a table 
+    field     --> field of the row to remove
+    condition --> condition of the field 
+    table     --> table of the db
+    row       --> updated row of the table (instance)
 */
-function update(field, condition, table, long, lat, alt, spd, time) {
+function update(field, condition, table, row) {
   knex(table)
     .where(field, condition) //Id
-    .update({
-      date_track: time,
-      latitude: lat,
-      longitude: long,
-      altitude: alt,
-      speed: spd
-    })
+    .update(row)
     .then(function (id) {
       //console.log("DB updated: " + field + "_" + condition)
     })
