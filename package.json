@@ -16,6 +16,7 @@
     "express": "^4.16.2",
     "jquery": "^3.2.1",
     "jsdom": "^11.3.0",
+    "knex": "^0.14.2",
     "mysql": "^2.15.0",
     "xmlhttprequest": "^1.8.0"
   }

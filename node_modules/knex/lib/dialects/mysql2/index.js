@@ -68,14 +68,14 @@ function Client_MySQL2(config) {
   // connection needs to be added to the pool.
   acquireRawConnection: function acquireRawConnection() {
     var connection = this.driver.createConnection(this.connectionSettings);
+    connection.on('error', function (err) {
+      connection.__knex__disposed = err;
+    });
     return new _bluebird2.default(function (resolver, rejecter) {
       connection.connect(function (err) {
         if (err) {
           return rejecter(err);
         }
-        connection.on('error', function (err) {
-          connection.__knex__disposed = err;
-        });
         resolver(connection);
       });
     });
