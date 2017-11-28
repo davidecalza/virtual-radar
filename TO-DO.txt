@@ -1,3 +1,1 @@
 TO-DO AND BUGS LIST:
-
-1. Remake database diagram (add reg to aircraft table)
