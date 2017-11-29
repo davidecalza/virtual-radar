@@ -18,14 +18,7 @@ var knex = require('knex')({
   connection: conn
 });
 
-knex('aircraft').truncate()
-  .then(function () { 
-    knex('track').truncate()
-    .then(function () {
-      console.log("Tables cleared")
-    })
-  })
-
+deleteTables();
 refresh(3000, 46.0, 11.0, 0, 100);
 
 /*  refresh
@@ -167,4 +160,17 @@ function update(field, condition, table, row) {
     .then(function (id) {
       //console.log("DB updated: " + field + "_" + condition)
     })
+}
+
+/*  deleteTables
+    clears all tables
+*/
+function deleteTables() {
+  knex('aircraft').truncate()
+  .then(function () { 
+    knex('track').truncate()
+    .then(function () {
+      console.log("Tables cleared")
+    })
+  })
 }
