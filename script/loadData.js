@@ -1,6 +1,6 @@
 /*
   TO-DO and ISSUES:
-  ...
+  - delete tables on js closed
 */
 
 var request = require("request");
@@ -18,13 +18,36 @@ var knex = require('knex')({
   connection: conn
 });
 
+knex('aircraft').truncate()
+  .then(function () { 
+    knex('track').truncate()
+    .then(function () {
+      console.log("Tables cleared")
+    })
+  })
 
-setInterval(function () {
-  updateData(46.0, 11.0, 0, 100); 
-}, 3000);
+refresh(3000, 46.0, 11.0, 0, 100);
+
+/*  refresh
+    refreshes the database
+    rate  --> refresh rate
+    lat   --> latitude
+    lng   --> longitude
+    fDstL --> ?
+    fDstU --> range
+*/
+function refresh(rate, lat, lng, fDstL, fDstU) {
+  setInterval(function () {
+    updateData(lat, lng, fDstL, fDstU);
+  }, rate);
+}
 
 /*  updateData
     downloads JSON data and manages db data
+    lat   --> latitude
+    lng   --> longitude
+    fDstL --> ?
+    fDstU --> range
 */
 function updateData(lat, lng, fDstL, fDstU) {
 
@@ -46,11 +69,11 @@ function updateData(lat, lng, fDstL, fDstU) {
     var id_tmp = [] //check if an aircraft got out of the range
 
     for (var i in data) { //loop on the lists of aircrafts in the range right now
-      
+
       id_tmp.push(data[i].Id)
 
       if (!id_st.includes(data[i].Id)) { //aircraft ID is not in the db yet 
-          
+
         console.log("NEW AIRCRAFT: " + data[i].Icao)
         id_st.push(data[i].Id)
 
@@ -62,7 +85,7 @@ function updateData(lat, lng, fDstL, fDstU) {
           id_flight: data[i].Id,
           airport_from: data[i].From,
           airport_to: data[i].To
-        }        
+        }
 
         var track = { //track object to add to the db
           id: data[i].Id,
@@ -78,14 +101,14 @@ function updateData(lat, lng, fDstL, fDstU) {
       }
 
       var update_row = { //track object to update
-        date_track: new Date(data[i].PosTime) ,
+        date_track: new Date(data[i].PosTime),
         latitude: data[i].Lat,
         longitude: data[i].Long,
         altitude: data[i].Alt,
         speed: data[i].Spd
       }
-      
-      update('id', data[i].Id, 'track', update_row);      
+
+      update('id', data[i].Id, 'track', update_row);
 
     }
 
@@ -122,7 +145,7 @@ function insert(row, table) {
     table     --> table of the db
 */
 function remove(field, condition, table) {
-    knex(table)
+  knex(table)
     .where(field, condition)
     .del()
     .then(function (id) {
