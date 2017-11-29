@@ -1,6 +1,6 @@
 /*
   TO-DO and ISSUES:
-  - delete tables on js closed
+  ...
 */
 
 var request = require("request");
