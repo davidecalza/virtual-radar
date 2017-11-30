@@ -1,3 +1,52 @@
+var aircraft = {
+    id: "",
+    reg: "",
+    name: "",
+    company: "",
+    id_flight: "",
+    airport_from: "",
+    airport_to: "",
+    date_track: "",
+    latitude: "",
+    longitude: "",
+    altitude: "",
+    speed: ""
+}
+
+var aircrafts = []
+var tracks_ids = []
+
+function loadPlanes() {
+    $.get("http://192.168.1.20:8080/Aircrafts", function (data) {
+        alert("AIRCRAFT")
+
+        for (var i in data) {
+            aircraft.id = data[i].id
+            aircraft.reg = data[i].reg
+            aircraft.name = data[i].name
+            aircraft.company = data[i].company
+            aircraft.id_flight = data[i].id_flight
+            aircraft.airport_from = data[i].airport_from
+            aircraft.airport_to = data[i].airport_to
+
+
+            $.get("http://192.168.1.20:8080/Track", function (tdata) {
+                alert("TRACK")
+                for (var t in tdata) {
+                    if (aircraft.id_flight = tdata[t].id) {
+                        aircraft.date_track = tdata[t].date_track
+                        aircraft.latitude = tdata[t].latitude
+                        aircraft.longitude = tdata[t].longitude
+                        aircraft.altitude = tdata[t].altitude
+                        aircraft.speed = tdata[t].speed
+                    }
+                }
+            })
+            aircrafts.push(aircraft)
+        }
+    })
+}
+
 function drawMap() {
     /**
      * SVG path for target icon
