@@ -19,7 +19,7 @@ var knex = require('knex')({
 });
 
 deleteTables();
-refresh(3000, 46.0, 11.0, 0, 100);
+refresh(500, 46.0, 11.0, 0, 100);
 
 /*  refresh
     refreshes the database

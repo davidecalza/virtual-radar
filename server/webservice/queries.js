@@ -21,6 +21,10 @@ router.get('/Aircrafts/:id', function (req, res) {
     eseguiQuery(res, 'SELECT * FROM aircraft WHERE id=?;', req.params.id);
 });
 
+router.get('/Tracks/:id', function (req, res) {
+    eseguiQuery(res, 'SELECT * FROM track WHERE id=?;', req.params.id);
+});
+
 /*************************************************************/
 
 function eseguiQuery(res, sQuery, aParam) {
