@@ -10,7 +10,7 @@ router.get('/Aircrafts', function (req, res) {
 });
 
 router.get('/Tracks', function (req, res) {
-    eseguiQuery(res, 'SELECT * FROM tracks ORDER BY id;');
+    eseguiQuery(res, 'SELECT * FROM track ORDER BY id;');
 });
 
 router.get('/Version', function (req, res) {

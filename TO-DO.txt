@@ -1,3 +1,0 @@
-TO-DO AND BUGS LIST:
-
-- WEBSERVICE: fare tutto in un unico file + local_conf
