@@ -17,7 +17,7 @@ var aircrafts = []
 var tracks_ids = []
 
 function loadPlanes() {
-    $.get("http://192.168.1.20:8080/Aircrafts", function (data) {
+    $.get("http://192.168.6.45:8080/Aircrafts", function (data) {
         alert("AIRCRAFT")
 
         for (var i in data) {
@@ -30,7 +30,7 @@ function loadPlanes() {
             aircraft.airport_to = data[i].airport_to
 
 
-            $.get("http://192.168.1.20:8080/Track", function (tdata) {
+            $.get("http://192.168.6.45:8080/Track", function (tdata) {
                 alert("TRACK")
                 for (var t in tdata) {
                     if (aircraft.id_flight = tdata[t].id) {
