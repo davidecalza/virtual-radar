@@ -1,8 +1,3 @@
-/*
-  TO-DO and ISSUES:
-  ...
-*/
-
 var request = require("request");
 
 var id_st = []; //Ids of aircrafts in the database 
