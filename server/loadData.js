@@ -72,7 +72,9 @@ function updateData(lat, lng, fDstL, fDstU) {
                     company: data[i].Op,
                     id_flight: data[i].Id,
                     airport_from: data[i].From,
-                    airport_to: data[i].To
+                    airport_to: data[i].To,
+                    first_latitude: data[i].Lat,
+                    first_longitude: data[i].Long
                 }
 
                 var track = { //track object to add to the db

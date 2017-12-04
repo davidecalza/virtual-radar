@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="Working airplanes display">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/david.xml" />
+    <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
+      <change beforePath="$PROJECT_DIR$/server/conf/createDatabase.js" afterPath="$PROJECT_DIR$/server/conf/createDatabase.js" />
       <change beforePath="$PROJECT_DIR$/server/loadData.js" afterPath="$PROJECT_DIR$/server/loadData.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
@@ -42,6 +40,16 @@
               <folding>
                 <element signature="n#!!block;n#drawMap#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadData.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/loadData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1950">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,9 +77,10 @@
       <list>
         <option value="$PROJECT_DIR$/server/TODO.txt" />
         <option value="$PROJECT_DIR$/server/webservice/queries.js" />
-        <option value="$PROJECT_DIR$/server/loadData.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/script/script.js" />
+        <option value="$PROJECT_DIR$/server/conf/createDatabase.js" />
+        <option value="$PROJECT_DIR$/server/loadData.js" />
       </list>
     </option>
   </component>
@@ -164,7 +173,7 @@
       <workItem from="1512239878078" duration="175000" />
       <workItem from="1512416979380" duration="1891000" />
       <workItem from="1512419035715" duration="268000" />
-      <workItem from="1512419331971" duration="4650000" />
+      <workItem from="1512419331971" duration="4933000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -173,11 +182,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512417618335</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Track management client side (work in progress)">
+      <created>1512424027358</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512424027358</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9665000" />
+    <option name="totallyTimeSpent" value="9948000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,7 +206,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.17877984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -247,7 +262,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added /All query to webservice" />
     <MESSAGE value="Working airplanes display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working airplanes display" />
+    <MESSAGE value="Track management client side (work in progress)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Track management client side (work in progress)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -336,13 +352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/conf/createDatabase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -365,18 +374,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/loadData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/conf/createDatabase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -388,6 +397,14 @@
           <folding>
             <element signature="n#!!block;n#drawMap#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/loadData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
