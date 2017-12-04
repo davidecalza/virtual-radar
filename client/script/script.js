@@ -20,8 +20,8 @@ var mapSettings = {
         "color": "#585869",
         "rollOverColor": "#585869",
         "selectedColor": "#585869",
-        "pauseDuration": 0.2,
-        "animationDuration": 2.5,
+        "pauseDuration": 0.1,
+        "animationDuration": 2,
         "adjustAnimationSpeed": true
     },
 
@@ -37,8 +37,8 @@ var mapSettings = {
 function update() {
     setInterval(function () {
         loadPlanes();
-        drawMap1();
-    }, 2000);
+        drawMap();
+    }, 500);
 }
 
 function loadPlanes() {
@@ -59,7 +59,9 @@ function loadPlanes() {
                     latitude: 0.0,
                     longitude: 0.0,
                     altitude: 0,
-                    speed: 0
+                    speed: 0,
+                    first_long: 0,
+                    first_lat: 0
                 };
 
                 aircraft.id = data[i].id;
@@ -74,6 +76,8 @@ function loadPlanes() {
                 aircraft.longitude = data[i].longitude;
                 aircraft.altitude = data[i].altitude;
                 aircraft.speed = data[i].speed;
+                aircraft.first_long = data[i].first_longitude;
+                aircraft.first_lat = data[i].first_latitude;
 
                 aircrafts.push(aircraft)
             }
@@ -84,36 +88,6 @@ function loadPlanes() {
 
 function drawMap() {
     var planes = [];
-    for (var i in aircrafts) {
-        var image = {
-            "svgPath":
-            "m2," +
-            "106h28l24," +
-            "30h72l-44," +
-            "-133h35l80," +
-            "132h98c21," +
-            "0 21," +
-            "34 0," +
-            "34l-98," +
-            "0 -80," +
-            "134h-35l43," +
-            "-133h-71l-24," +
-            "30h-28l15," +
-            "-47",
-            "title": aircrafts[i].reg,
-            "latitude": aircrafts[i].latitude,
-            "longitude": aircrafts[i].longitude,
-            "scale": 0.1,
-            "positionScale": 1.3
-        };
-        planes.push(image);
-    }
-    mapSettings.dataProvider.images = planes;
-    AmCharts.makeChart("chartdiv", mapSettings);
-}
-
-function drawMap1() {
-    var planes = [];
     var lines = [];
     for (var i in aircrafts) {
         var image = {
@@ -122,7 +96,7 @@ function drawMap1() {
             "positionOnLine": 0,
             "color": "#000000",
             "alpha": 1,
-            "animateAlongLine": true,
+            "animateAlongLine": false,
             "lineId": "line"+i,
             "flipDirection": false,
             "loop": false,
@@ -133,8 +107,8 @@ function drawMap1() {
             "id": "line"+i,
             "arc": 0,
             "alpha": 0.3,
-            "latitudes": [aircrafts[i].latitude, aircrafts[i].latitude+0.5],
-            "longitudes": [aircrafts[i].longitude, aircrafts[i].longitude+0.5]
+            "latitudes": [aircrafts[i].latitude, aircrafts[i].first_lat],
+            "longitudes": [aircrafts[i].longitude, aircrafts[i].first_long]
         };
         lines.push(line);
         planes.push(image);
