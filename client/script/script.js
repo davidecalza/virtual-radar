@@ -43,7 +43,7 @@ function update() {
 
 function loadPlanes() {
     aircrafts = [];
-    $.get("http://192.168.6.13:8080/Aircrafts", function (data) {
+    $.get("http://192.168.1.20:8080/Aircrafts", function (data) {
         /*****************************************************************/
         for (var i in data) {
 
@@ -70,7 +70,7 @@ function loadPlanes() {
             aircraft.airport_from = data[i].airport_from
             aircraft.airport_to = data[i].airport_to
 
-            $.get("http://192.168.6.13:8080/Tracks/" + data[i].id_flight, function (tdata) {
+            $.get("http://192.168.1.20:8080/Tracks/" + data[i].id_flight, function (tdata) {
                 aircraft.date_track = tdata[0].date_track
                 aircraft.latitude = tdata[0].latitude
                 aircraft.longitude = tdata[0].longitude
