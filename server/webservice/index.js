@@ -7,11 +7,13 @@ app.use(cors());
 app.use(compression());      					
 var queries = require('./queries.js');			
 app.use('/', queries);
-var update = require('./loadData');
+var update = require('./loadData.js');
+var conf = require('../conf/deleteTables.js');
 
 var port = config.ws_port;
 
 app.listen(port, function () {
+    conf.deleteTables();
     update.refresh(500,46,11,0,100);
     console.log("");
     console.log("");

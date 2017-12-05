@@ -8,10 +8,6 @@ var conn = {
     password: 'root',
     database: 'radar'
 };
-var knex = require('knex')({
-    client: 'mysql',
-    connection: conn
-});
 
 /*  refresh
     refreshes the database
@@ -22,7 +18,6 @@ var knex = require('knex')({
     fDstU --> range
 */
 function refresh(rate, lat, lng, fDstL, fDstU) {
-    deleteTables();
     setInterval(function () {
         updateData(lat, lng, fDstL, fDstU);
     }, rate);
@@ -155,19 +150,6 @@ function update(field, condition, table, row) {
         .update(row)
         .then(function (id) {
             //console.log("> DB updated: " + field + "_" + condition)
-        })
-}
-
-/*  deleteTables
-    clears all tables
-*/
-function deleteTables() {
-    knex('aircraft').truncate()
-        .then(function () {
-            knex('track').truncate()
-                .then(function () {
-                    console.log("> Tables cleared")
-                })
         })
 }
 
