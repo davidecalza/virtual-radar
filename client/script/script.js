@@ -2,11 +2,11 @@ var aircrafts = [];
 
 var mapSettings = {
     "type": "map",
-    "theme": "light",
+    "theme": "dark",
 
     "dataProvider": {
-        "map": "worldLow",
-        "zoomLevel": 28,
+        "map": "italyHigh",
+        "zoomLevel": 4,
         "zoomLongitude": 11,
         "zoomLatitude": 46,
 
@@ -26,7 +26,7 @@ var mapSettings = {
     },
 
     "linesSettings": {
-        "color": "#585869",
+        "color": "#cc0000",
         "alpha": 0.4
     },
 
@@ -117,4 +117,3 @@ function drawMap() {
     mapSettings.dataProvider.lines = lines;
     AmCharts.makeChart("chartdiv", mapSettings);
 }
-
