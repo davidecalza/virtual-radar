@@ -30,9 +30,9 @@ router.get('/All', function (req, res) {
     eseguiQuery(res, 'SELECT * FROM aircraft JOIN track ON id_flight=track.id;');
 });
 
-router.get('Run/:range/:lat/:long/:fDstL/:fDstU', function(req) {
-    update.refresh(req.params.rate,req.params.lat,req.params.long,req.params.fDstL, req.params.fDstU);
-});
+// router.get('/Run/:range/:lat/:long/:fDstL/:fDstU', function(req, res) {
+//     update.refresh(req.params.rate,req.params.lat,req.params.long,req.params.fDstL, req.params.fDstU);
+// });
 /*************************************************************/
 
 function eseguiQuery(res, sQuery, aParam) {

@@ -7,10 +7,12 @@ app.use(cors());
 app.use(compression());      					
 var queries = require('./queries.js');			
 app.use('/', queries);
+var update = require('./loadData');
 
 var port = config.ws_port;
 
 app.listen(port, function () {
+    update.refresh(500,46,11,0,100);
     console.log("");
     console.log("");
     console.log("Database: " + config.connection.database);
