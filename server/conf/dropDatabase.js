@@ -1,3 +1,6 @@
+// DROP DATABASE
+// Deletes the database
+
 var conn = {
     host: 'localhost',
     user: 'root',
@@ -12,4 +15,4 @@ var conn = {
   .then(function(){
       knex.destroy();
       console.log("Database dropped")
-  })
+  });

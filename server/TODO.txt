@@ -1,4 +1,0 @@
-TODO AND BUGS LIST:
-
-- fare load solo su chiamata
-- storico?

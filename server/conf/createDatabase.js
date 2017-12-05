@@ -1,3 +1,6 @@
+// CREATE DATABASE
+// creates database if not already exists
+
 var conn = {
     host: 'localhost',
     user: 'root',

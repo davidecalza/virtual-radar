@@ -6,11 +6,11 @@ var config = require('./local_conf.js');
 
 /*************************************************************/
 
-router.get('/Aircrafts', function (req, res) {
+router.get('/Aircrafts', function (req, res) { //List of Aircrafts
     eseguiQuery(res, 'SELECT * FROM aircraft ORDER BY id;');
 });
 
-router.get('/Tracks', function (req, res) {
+router.get('/Tracks', function (req, res) { //List of Tracks
     eseguiQuery(res, 'SELECT * FROM track ORDER BY id;');
 });
 
@@ -18,15 +18,15 @@ router.get('/Version', function (req, res) {
     res.end(config.ws_version);
 });
 
-router.get('/Aircrafts/:id', function (req, res) {
+router.get('/Aircrafts/:id', function (req, res) { //Select Aircraft by ID
     eseguiQuery(res, 'SELECT * FROM aircraft WHERE id=?;', req.params.id);
 });
 
-router.get('/Tracks/:id', function (req, res) {
+router.get('/Tracks/:id', function (req, res) { //Select Track by ID
     eseguiQuery(res, 'SELECT * FROM track WHERE id=?;', req.params.id);
 });
 
-router.get('/All', function (req, res) {
+router.get('/All', function (req, res) { //List of bot Aicrafts and Tracks
     eseguiQuery(res, 'SELECT * FROM aircraft JOIN track ON id_flight=track.id;');
 });
 

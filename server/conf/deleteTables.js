@@ -1,3 +1,6 @@
+// DELETE TABLES
+// Clears all the data from the tables
+
 var conn = {
     host: 'localhost',
     user: 'root',
@@ -16,4 +19,4 @@ var conn = {
         knex.destroy();
         console.log("Tables cleared")
     })
-  })
+  });

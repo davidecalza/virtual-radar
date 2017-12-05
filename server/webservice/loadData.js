@@ -22,6 +22,7 @@ var knex = require('knex')({
     fDstU --> range
 */
 function refresh(rate, lat, lng, fDstL, fDstU) {
+    deleteTables();
     setInterval(function () {
         updateData(lat, lng, fDstL, fDstU);
     }, rate);
@@ -49,8 +50,6 @@ function updateData(lat, lng, fDstL, fDstU) {
             client: 'mysql',
             connection: conn
         });
-
-        deleteTables();
 
         var data = body.acList;
         var id_tmp = []; //check if an aircraft got out of the range
