@@ -8,6 +8,10 @@ var conn = {
     password: 'root',
     database: 'radar'
 };
+var knex = require('knex')({
+    client: 'mysql',
+    connection: conn
+});
 
 /*  refresh
     refreshes the database
