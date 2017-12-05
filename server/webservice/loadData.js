@@ -13,8 +13,6 @@ var knex = require('knex')({
     connection: conn
 });
 
-refresh(500, 46.0, 11.0, 0, 100);
-
 /*  refresh
     refreshes the database
     rate  --> refresh rate
@@ -39,7 +37,7 @@ function refresh(rate, lat, lng, fDstL, fDstU) {
 */
 function updateData(lat, lng, fDstL, fDstU) {
 
-    var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU
+    var url = "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=" + lat + "&lng=" + lng + "&fDstL=" + fDstL + "&fDstU=" + fDstU;
 
     //process.stdout.write('\033c');
 
@@ -53,66 +51,67 @@ function updateData(lat, lng, fDstL, fDstU) {
             connection: conn
         });
 
-        var data = body.acList
-        var id_tmp = [] //check if an aircraft got out of the range
+        var data = body.acList;
+        var id_tmp = []; //check if an aircraft got out of the range
 
         for (var i in data) { //loop on the lists of aircrafts in the range right now
+            if (data.hasOwnProperty(i)) {
 
-            id_tmp.push(data[i].Id)
+                id_tmp.push(data[i].Id);
 
-            if (!id_st.includes(data[i].Id)) { //aircraft ID is not in the db yet
+                if (!id_st.includes(data[i].Id)) { //aircraft ID is not in the db yet
 
-                console.log("NEW AIRCRAFT: " + data[i].Icao)
-                id_st.push(data[i].Id)
+                    console.log("> NEW AIRCRAFT: " + data[i].Icao);
+                    id_st.push(data[i].Id);
 
-                var aircraft = { //aircraft object to add to the db
-                    id: data[i].Icao,
-                    name: data[i].Mdl,
-                    reg: data[i].Reg,
-                    company: data[i].Op,
-                    id_flight: data[i].Id,
-                    airport_from: data[i].From,
-                    airport_to: data[i].To,
-                    first_latitude: data[i].Lat,
-                    first_longitude: data[i].Long
+                    var aircraft = { //aircraft object to add to the db
+                        id: data[i].Icao,
+                        name: data[i].Mdl,
+                        reg: data[i].Reg,
+                        company: data[i].Op,
+                        id_flight: data[i].Id,
+                        airport_from: data[i].From,
+                        airport_to: data[i].To,
+                        first_latitude: data[i].Lat,
+                        first_longitude: data[i].Long
+                    };
+
+                    var track = { //track object to add to the db
+                        id: data[i].Id,
+                        date_track: new Date(data[i].PosTime),
+                        latitude: data[i].Lat,
+                        longitude: data[i].Long,
+                        altitude: data[i].Alt,
+                        speed: data[i].Spd
+                    };
+
+                    insert(aircraft, 'aircraft');
+                    insert(track, 'track');
                 }
 
-                var track = { //track object to add to the db
-                    id: data[i].Id,
+                var update_row = { //track object to update
                     date_track: new Date(data[i].PosTime),
                     latitude: data[i].Lat,
                     longitude: data[i].Long,
                     altitude: data[i].Alt,
                     speed: data[i].Spd
-                }
+                };
 
-                insert(aircraft, 'aircraft')
-                insert(track, 'track')
+                update('id', data[i].Id, 'track', update_row);
+
             }
-
-            var update_row = { //track object to update
-                date_track: new Date(data[i].PosTime),
-                latitude: data[i].Lat,
-                longitude: data[i].Long,
-                altitude: data[i].Alt,
-                speed: data[i].Spd
-            }
-
-            update('id', data[i].Id, 'track', update_row);
-
         }
 
-        for (var i in id_st) { //check and compare if aircrafts in the db are the same as the ones in the range right now
-            if (!id_tmp.includes(id_st[i])) { //aircraft got out of the range
-                console.log("AN AIRCRAFT GOT OUT OF THE RANGE: " + id_st[i])
-                remove('id_flight', id_st[i], 'aircraft')
-                remove('id', id_st[i], 'track')
-                id_st.splice(i, 1);
+        for (var t in id_st) { //check and compare if aircrafts in the db are the same as the ones in the range right now
+            if (!id_tmp.includes(id_st[t])) { //aircraft got out of the range
+                console.log("> AIRCRAFT " + id_st[t] + " GOT OUT OF THE RANGE");
+                remove('id_flight', id_st[t], 'aircraft');
+                remove('id', id_st[t], 'track');
+                id_st.splice(t, 1);
             }
         }
 
         knex.destroy();
-
     })
 }
 
@@ -124,7 +123,7 @@ function updateData(lat, lng, fDstL, fDstU) {
 function insert(row, table) {
     knex.insert(row).into(table)
         .then(function (id) {
-            //console.log("DB INSERT: " + row.id)
+            //console.log("> DB INSERT: " + row.id)
         })
 }
 
@@ -139,7 +138,7 @@ function remove(field, condition, table) {
         .where(field, condition)
         .del()
         .then(function (id) {
-            //console.log("DB remove: " + field + "_" + condition)
+            //console.log("> DB remove: " + field + "_" + condition)
         })
 }
 
@@ -155,7 +154,7 @@ function update(field, condition, table, row) {
         .where(field, condition) //Id
         .update(row)
         .then(function (id) {
-            //console.log("DB updated: " + field + "_" + condition)
+            //console.log("> DB updated: " + field + "_" + condition)
         })
 }
 
@@ -167,7 +166,11 @@ function deleteTables() {
         .then(function () {
             knex('track').truncate()
                 .then(function () {
-                    console.log("Tables cleared")
+                    console.log("> Tables cleared")
                 })
         })
 }
+
+module.exports.refresh = function (rate, latitude, longitude, fDstL, fDstU) {
+    return refresh(rate, latitude, longitude, fDstL, fDstU);
+};

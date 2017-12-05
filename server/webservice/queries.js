@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var config = require('./local_conf.js');
+var update = require('./loadData');
 
 /*************************************************************/
 
@@ -15,7 +16,7 @@ router.get('/Tracks', function (req, res) {
 
 router.get('/Version', function (req, res) {
     res.end(config.ws_version);
-})
+});
 
 router.get('/Aircrafts/:id', function (req, res) {
     eseguiQuery(res, 'SELECT * FROM aircraft WHERE id=?;', req.params.id);
@@ -28,6 +29,10 @@ router.get('/Tracks/:id', function (req, res) {
 router.get('/All', function (req, res) {
     eseguiQuery(res, 'SELECT * FROM aircraft JOIN track ON id_flight=track.id;');
 });
+
+router.get('Run/:range/:lat/:long/:fDstL/:fDstU', function(req) {
+    update.refresh(req.params.rate,req.params.lat,req.params.long,req.params.fDstL, req.params.fDstU);
+});
 /*************************************************************/
 
 function eseguiQuery(res, sQuery, aParam) {
@@ -36,12 +41,12 @@ function eseguiQuery(res, sQuery, aParam) {
 
     connection = mysql.createConnection(config.connection);
     connection.connect();
-    connection.query(sQuery, aParam, function (err, rows, fields) {
+    connection.query(sQuery, aParam, function (err, rows) {
         if (!err) {
             res.json(rows);
         }
         else {
-            console.log('> ERROR: ' + err)
+            console.log('> ERROR: ' + err);
             res.json('{}');
         }
     });
