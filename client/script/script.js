@@ -91,7 +91,7 @@ function drawMap() {
     var lines = [];
     for (var i in aircrafts) {
         var image = {
-            "svgPath": "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47",
+            "svgPath": "M357,12.8h-51l-127.5,204H38.3C17.9,216.8,0,234.6,0,255s17.9,38.3,38.3,38.3h140.3l127.5,204h51l-63.8-204h140.3l38.3,51H510L484.5,255l25.5-89.3h-38.3l-38.3,51H293.3L357,12.8z",
             "title": aircrafts[i].name,
             "positionOnLine": 0,
             "color": "#000000",
@@ -100,7 +100,7 @@ function drawMap() {
             "lineId": "line"+i,
             "flipDirection": false,
             "loop": false,
-            "scale": 0.1,
+            "scale": 0.05,
             "positionScale": 1
         };
         var line = {

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var config = require('./local_conf.js');
-var update = require('./loadData');
+//var update = require('./loadData');
 
 /*************************************************************/
 
@@ -37,7 +37,7 @@ router.get('/All', function (req, res) {
 
 function eseguiQuery(res, sQuery, aParam) {
 
-    console.log('> Request: SQL -- ' + sQuery); //debug
+    //console.log('> Request: SQL -- ' + sQuery); //debug
 
     connection = mysql.createConnection(config.connection);
     connection.connect();
