@@ -1,5 +1,6 @@
-var aircrafts = [];
+var aircrafts = []; //List of aircrafts to display
 
+//Settings of the map to draw
 var mapSettings = {
     "type": "map",
     "theme": "dark",

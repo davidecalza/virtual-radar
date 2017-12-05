@@ -14,7 +14,7 @@ router.get('/Tracks', function (req, res) { //List of Tracks
     eseguiQuery(res, 'SELECT * FROM track ORDER BY id;');
 });
 
-router.get('/Version', function (req, res) {
+router.get('/Version', function (req, res) { //Shows webservice version
     res.end(config.ws_version);
 });
 

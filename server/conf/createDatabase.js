@@ -38,8 +38,8 @@ knex.raw('CREATE DATABASE IF NOT EXISTS radar')
                     table.integer('id_flight');//.notNullable().references('id').inTable('track'); //Id
                     table.string('airport_from'); //From
                     table.string('airport_to'); //To
-                    table.double('first_longitude');
-                    table.double('first_latitude');
+                    table.double('first_longitude'); //First longitude for track drawing
+                    table.double('first_latitude'); //First latitude for track drawing
                 })
                     .then(function () {
                         knex.destroy();
