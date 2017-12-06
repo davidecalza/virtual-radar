@@ -34,7 +34,13 @@ var mapSettings = {
     },
 
     "export": {"enabled": true},
-    "responsive": {"enabled": true}
+    "responsive": {"enabled": true},
+    "listeners": [{
+        "event": "clickMapObject",
+        "method": function(event) {
+            window.open("http://localhost:8080/Aircraft/"+event.mapObject.id, '_blank');
+        }
+    }]
 };
 
 function update() {
@@ -51,7 +57,7 @@ function update() {
         //Refreshes objects
         map.validateData(map.dataProvider.images);
         map.validateData(map.dataProvider.lines);
-    }, 200);
+    }, 2000);
 }
 
 function loadPlanes() {
@@ -119,6 +125,7 @@ function drawMap() {
 
     for (var i in aircrafts) {
         var image = {
+            "id": aircrafts[i].id,
             "svgPath": "M357,12.8h-51l-127.5,204H38.3C17.9,216.8,0,234.6,0,255s17.9,38.3,38.3,38.3h140.3l127.5,204h51l-63.8-204h140.3l38.3,51H510L484.5,255l25.5-89.3h-38.3l-38.3,51H293.3L357,12.8z",
             "title": aircrafts[i].name + '<br />Company: ' + aircrafts[i].company + '<br />From: ' + aircrafts[i].airport_from + '<br />To: ' + aircrafts[i].airport_to+ '<br />Speed: ' + aircrafts[i].speed,
             "positionOnLine": 0,
@@ -129,7 +136,8 @@ function drawMap() {
             "flipDirection": false,
             "loop": false,
             "scale": 0.05,
-            "positionScale": 1
+            "positionScale": 1,
+            "selectable": true
         };
         var line = {
             "id": "line"+i,
