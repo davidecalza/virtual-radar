@@ -39,7 +39,7 @@ function update() {
     setInterval(function () {
         loadPlanes();
         drawMap();
-    }, 2000);
+    }, 200);
 }
 
 function loadPlanes() {
@@ -90,6 +90,21 @@ function loadPlanes() {
 function drawMap() {
     var planes = [];
     var lines = [];
+
+
+    var circle = {
+        "svgPath": "M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555     C29.106,6.562,22.55,0,14.554,0z",
+        "latitude": 46,
+        "longitude": 11,
+        "color": "#000000",
+        "rollOverColor": "#000000",
+        "selectedColor": "#000000",
+        "scale": 25,
+        "alpha": 0.1
+    };
+
+    planes.push(circle);
+
     for (var i in aircrafts) {
         var image = {
             "svgPath": "M357,12.8h-51l-127.5,204H38.3C17.9,216.8,0,234.6,0,255s17.9,38.3,38.3,38.3h140.3l127.5,204h51l-63.8-204h140.3l38.3,51H510L484.5,255l25.5-89.3h-38.3l-38.3,51H293.3L357,12.8z",
@@ -122,22 +137,10 @@ function drawMap() {
         "longitude": 11,
         "color": "#cc0000",
         "rollOverColor": "#cc0000",
-        "selectedColor": "#cc0000",
-    }
-
-    var circle = {
-        "svgPath": "M256,0C114.509,0,0,114.497,0,256c0,141.491,114.497,256,256,256c141.491,0,256-114.497,256-256    C512,114.509,397.503,0,256,0z M256,477.867c-122.337,0-221.867-99.529-221.867-221.867S133.663,34.133,256,34.133    S477.867,133.663,477.867,256S378.337,477.867,256,477.867z",
-        "latitude": 46,
-        "longitude": 11,
-        "color": "#cc0000",
-        "rollOverColor": "#cc0000",
-        "selectedColor": "#cc0000",
-        "scale": 1.8
-    }
-
+        "selectedColor": "#cc0000"
+    };
 
     planes.push(target);
-    planes.push(circle);
     mapSettings.dataProvider.images = planes;
     mapSettings.dataProvider.lines = lines;
     AmCharts.makeChart("chartdiv", mapSettings);
