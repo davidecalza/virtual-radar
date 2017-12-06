@@ -1,5 +1,7 @@
 var aircrafts = []; //List of aircrafts to display
 
+var map;
+
 //Settings of the map to draw
 var mapSettings = {
     "type": "map",
@@ -36,9 +38,12 @@ var mapSettings = {
 };
 
 function update() {
+    map = AmCharts.makeChart("chartdiv", mapSettings);
     setInterval(function () {
         loadPlanes();
         drawMap();
+        map.validateData(map.dataProvider.images);
+        map.validateData(map.dataProvider.lines);
     }, 200);
 }
 
@@ -143,5 +148,4 @@ function drawMap() {
     planes.push(target);
     mapSettings.dataProvider.images = planes;
     mapSettings.dataProvider.lines = lines;
-    AmCharts.makeChart("chartdiv", mapSettings);
 }
