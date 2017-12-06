@@ -42,6 +42,13 @@ function update() {
     setInterval(function () {
         loadPlanes();
         drawMap();
+
+        //Keeps user zoom and position of the map
+        //map.dataProvider.zoomLevel = map.zoomLevel();
+        map.dataProvider.zoomLatitude = map.zoomLatitude();
+        map.dataProvider.zoomLongitude = map.zoomLongitude();
+
+        //Refreshes objects
         map.validateData(map.dataProvider.images);
         map.validateData(map.dataProvider.lines);
     }, 200);

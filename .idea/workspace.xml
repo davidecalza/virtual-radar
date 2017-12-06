@@ -34,8 +34,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="134" column="27" lean-forward="true" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
+            <state relative-caret-position="3900">
+              <caret line="156" column="43" lean-forward="true" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -290,11 +290,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512510886483</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Optimized refresh">
+      <created>1512581443553</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1512581443553</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32030000" />
+    <option name="totallyTimeSpent" value="33034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +383,8 @@
     <MESSAGE value="Server documentation" />
     <MESSAGE value="HTML and CSS update" />
     <MESSAGE value="Client side documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client side documentation" />
+    <MESSAGE value="Optimized refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized refresh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -732,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="134" column="27" lean-forward="true" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="27" />
+        <state relative-caret-position="3900">
+          <caret line="156" column="43" lean-forward="true" selection-start-line="156" selection-start-column="43" selection-end-line="156" selection-end-column="43" />
           <folding />
         </state>
       </provider>
