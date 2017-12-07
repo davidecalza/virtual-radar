@@ -19,11 +19,11 @@ router.get('/Version', function (req, res) { //Shows webservice version
 });
 
 router.get('/Aircrafts/:id', function (req, res) { //Select Aircraft by ID
-    eseguiQuery(res, 'SELECT * FROM aircraft WHERE id=?;', req.params.id);
+    eseguiQuery(res, 'SELECT * FROM aircraft WHERE id_flight=?;', req.params.id);
 });
 
 router.get('/Tracks/:id', function (req, res) { //Select Track by ID
-    eseguiQuery(res, 'SELECT * FROM track WHERE id=?;', req.params.id);
+    eseguiQuery(res, 'SELECT * FROM track WHERE id_flight=?;', req.params.id);
 });
 
 router.get('/All', function (req, res) { //List of bot Aicrafts and Tracks

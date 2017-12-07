@@ -37,8 +37,18 @@ var mapSettings = {
     "responsive": {"enabled": true},
     "listeners": [{
         "event": "clickMapObject",
-        "method": function(event) {
-            window.open("http://localhost:8080/Aircraft/"+event.mapObject.id, '_blank');
+        "method": function(e) {
+            if(parseInt($("#wrapper").css("padding-left")) > 0){
+                $("#wrapper").toggleClass("toggled");
+                //refresh data
+                setTimeout(function(){
+                    $("#wrapper").toggleClass("toggled");
+                }, 500);
+            }
+            else{
+                $("#wrapper").toggleClass("toggled");
+            }
+            //append <li>Nome: ...<li/>
         }
     }]
 };
@@ -55,9 +65,9 @@ function update() {
         map.dataProvider.zoomLongitude = map.zoomLongitude();
 
         //Refreshes objects
-        map.validateData(map.dataProvider.images);
         map.validateData(map.dataProvider.lines);
-    }, 2000);
+        map.validateData(map.dataProvider.images);
+    }, 500);
 }
 
 function loadPlanes() {

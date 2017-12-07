@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
       <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
+      <change beforePath="$PROJECT_DIR$/server/webservice/queries.js" afterPath="$PROJECT_DIR$/server/webservice/queries.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +27,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="278">
+              <caret line="50" column="37" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3125">
+              <caret line="168" column="22" lean-forward="true" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -34,8 +47,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="550">
+              <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -75,12 +88,12 @@
         <option value="$PROJECT_DIR$/server/webservice/loadData.js" />
         <option value="$PROJECT_DIR$/server/conf/dropDatabase.js" />
         <option value="$PROJECT_DIR$/server/webservice/local_conf.js" />
-        <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/server/conf/createDatabase.js" />
-        <option value="$PROJECT_DIR$/server/webservice/queries.js" />
-        <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/server/webservice/index.js" />
         <option value="$PROJECT_DIR$/server/conf/deleteTables.js" />
+        <option value="$PROJECT_DIR$/server/webservice/queries.js" />
+        <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/client/script/script.js" />
       </list>
     </option>
@@ -205,7 +218,10 @@
       <workItem from="1512511207997" duration="549000" />
       <workItem from="1512570787029" duration="669000" />
       <workItem from="1512576991509" duration="1935000" />
-      <workItem from="1512587181306" duration="597000" />
+      <workItem from="1512587181306" duration="661000" />
+      <workItem from="1512599498449" duration="80000" />
+      <workItem from="1512599588918" duration="1895000" />
+      <workItem from="1512639390156" duration="5143000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -305,11 +321,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512585053101</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added onClick function on airplane objects">
+      <created>1512588389798</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512588389798</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34618000" />
+    <option name="totallyTimeSpent" value="41800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,7 +416,8 @@
     <MESSAGE value="Client side documentation" />
     <MESSAGE value="Optimized refresh" />
     <MESSAGE value="Allowed users navigation around the map (zoom blocked due to range SVG object getting bigger as the zoom increases)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allowed users navigation around the map (zoom blocked due to range SVG object getting bigger as the zoom increases)" />
+    <MESSAGE value="Added onClick function on airplane objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added onClick function on airplane objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,31 +702,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/webservice/loadData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-472">
-          <caret line="114" column="6" lean-forward="true" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/webservice/queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="71" lean-forward="false" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/conf/dropDatabase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -739,18 +742,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/webservice/loadData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1403">
+          <caret line="114" column="6" lean-forward="true" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/webservice/queries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="57" lean-forward="false" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="278">
+          <caret line="50" column="37" lean-forward="false" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3125">
+          <caret line="168" column="22" lean-forward="true" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="550">
+          <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
           <folding />
         </state>
       </provider>
