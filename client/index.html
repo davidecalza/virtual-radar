@@ -46,11 +46,7 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li>
-                <a id="close_sidebar"><img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon"></a>
-            </li>
-        </ul>
+        <img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()">
     </div>
     <!-- /#sidebar-wrapper -->
 
@@ -71,12 +67,6 @@
             </span>
     </div>
 </footer>
-
-<script>
-    $('#close_sidebar').click(function(){
-        $("#wrapper").toggleClass("toggled");
-    })
-</script>
 
 </body>
 </html>

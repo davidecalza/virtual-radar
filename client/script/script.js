@@ -37,21 +37,31 @@ var mapSettings = {
     "responsive": {"enabled": true},
     "listeners": [{
         "event": "clickMapObject",
-        "method": function(e) {
-            if(parseInt($("#wrapper").css("padding-left")) > 0){
-                $("#wrapper").toggleClass("toggled");
-                //refresh data
-                setTimeout(function(){
-                    $("#wrapper").toggleClass("toggled");
+        "method": function (e) {
+            var str = '<ul class="sidebar-nav" id="sidebar-nav-content">';
+            str += e.mapObject.desc;
+            str+='</ul>';
+
+            if (parseInt($("#wrapper").css("padding-left")) > 0) {
+                toggleSidebar();
+
+                setTimeout(function () {
+                    $('#sidebar-wrapper').html(str);
+                    toggleSidebar();
                 }, 500);
             }
-            else{
-                $("#wrapper").toggleClass("toggled");
+            else {
+                $('#sidebar-wrapper').html(str);
+                toggleSidebar();
             }
             //append <li>Nome: ...<li/>
         }
     }]
 };
+
+function toggleSidebar() {
+    $("#wrapper").toggleClass("toggled");
+}
 
 function update() {
     map = AmCharts.makeChart("chartdiv", mapSettings);
@@ -137,20 +147,25 @@ function drawMap() {
         var image = {
             "id": aircrafts[i].id,
             "svgPath": "M357,12.8h-51l-127.5,204H38.3C17.9,216.8,0,234.6,0,255s17.9,38.3,38.3,38.3h140.3l127.5,204h51l-63.8-204h140.3l38.3,51H510L484.5,255l25.5-89.3h-38.3l-38.3,51H293.3L357,12.8z",
-            "title": aircrafts[i].name + '<br />Company: ' + aircrafts[i].company + '<br />From: ' + aircrafts[i].airport_from + '<br />To: ' + aircrafts[i].airport_to+ '<br />Speed: ' + aircrafts[i].speed,
             "positionOnLine": 0,
             "color": "#000000",
             "alpha": 1,
             "animateAlongLine": false,
-            "lineId": "line"+i,
+            "lineId": "line" + i,
             "flipDirection": false,
             "loop": false,
             "scale": 0.05,
             "positionScale": 1,
-            "selectable": true
+            "selectable": true,
+            "desc":
+            '<li class="list_title">' + aircrafts[i].name + '<img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()"></li>' +
+            '<li class="list_title">Company</li><li>' + aircrafts[i].company + '</li>' +
+            '<li class="list_title">From</li><li> ' + aircrafts[i].airport_from + '</li>' +
+            '<li class="list_title">To</li><li> ' + aircrafts[i].airport_to + '</li>' +
+            '<li class="list_title">Speed</li><li> ' + aircrafts[i].speed + '</li>'
         };
         var line = {
-            "id": "line"+i,
+            "id": "line" + i,
             "arc": 0,
             "alpha": 0.3,
             "latitudes": [aircrafts[i].latitude, aircrafts[i].first_lat],
