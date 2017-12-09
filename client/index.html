@@ -29,7 +29,7 @@
 
     <script>
         //Draws the map
-        update();
+        update(500);
     </script>
 </head>
 
@@ -42,16 +42,12 @@
              id="home_airplane_icon"> Virtual Radar
     </a>
 </nav>
+
+<!--Sidebar wrapper-->
 <div id="wrapper">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()">
-    </div>
-    <!-- /#sidebar-wrapper -->
-
+    <!--Sidebar content-->
+    <div id="sidebar-wrapper"></div>
 </div>
-<!-- /#wrapper -->
 
 <!--Map-->
 <div id="chartdiv"></div>

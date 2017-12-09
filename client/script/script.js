@@ -1,6 +1,7 @@
 var aircrafts = []; //List of aircrafts to display
 
-var map;
+//code of the X used to close the sidebar
+var close_sidebar_code = '<img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()">';
 
 //Settings of the map to draw
 var mapSettings = {
@@ -9,12 +10,13 @@ var mapSettings = {
 
     "dataProvider": {
         "map": "italyHigh",
+        //initial zoom level and position of the map
         "zoomLevel": 5,
         "zoomLongitude": 11,
         "zoomLatitude": 46,
 
-        "lines": [],
-        "images": []
+        "lines": [], //tracks
+        "images": [] //aircrafts
     },
 
     "areasSettings": {"unlistedAreasColor": "#8dd9ef"},
@@ -35,8 +37,12 @@ var mapSettings = {
 
     "export": {"enabled": true},
     "responsive": {"enabled": true},
+
+    //Aircrafts onClick
     "listeners": [{
         "event": "clickMapObject",
+        //If the sidebar is already toggled, the sidebar closes down and toggles with the new data
+        //Otherwise it just toggles with the selected aircraft information
         "method": function (e) {
             var str = '<ul class="sidebar-nav" id="sidebar-nav-content">';
             str += e.mapObject.desc;
@@ -59,15 +65,22 @@ var mapSettings = {
     }]
 };
 
+/*  toggleSidebar
+    toggleClass on sidebar
+*/
 function toggleSidebar() {
     $("#wrapper").toggleClass("toggled");
 }
 
-function update() {
-    map = AmCharts.makeChart("chartdiv", mapSettings);
+/*  update
+    refreshes the map
+    rate --> refresh rate
+*/
+function update(rate) {
+    var map = AmCharts.makeChart("chartdiv", mapSettings);
     setInterval(function () {
         loadPlanes();
-        drawMap();
+        drawItems();
 
         //Keeps user zoom and position of the map
         //map.dataProvider.zoomLevel = map.zoomLevel();
@@ -77,9 +90,12 @@ function update() {
         //Refreshes objects
         map.validateData(map.dataProvider.lines);
         map.validateData(map.dataProvider.images);
-    }, 500);
+    }, rate);
 }
 
+/*  loadPlanes
+    Downloads from the webservice and stores data on aircrafts array
+*/
 function loadPlanes() {
     $.get("http://localhost:8080/All", function (data) {
         aircrafts = [];
@@ -121,15 +137,17 @@ function loadPlanes() {
                 aircrafts.push(aircraft)
             }
         }
-        //drawMap();
     })
 }
 
-function drawMap() {
-    var planes = [];
-    var lines = [];
+/*  drawItems
+    Updates mapSettings object, pushing all the SVG objects (Planes, tracks and other items)
+*/
+function drawItems() {
+    var items = []; //array of SVG items (planes, target and circle)
+    var lines = []; //tracks of the planes
 
-
+    //Circle object of the radar range
     var circle = {
         "svgPath": "M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555     C29.106,6.562,22.55,0,14.554,0z",
         "latitude": 46,
@@ -141,7 +159,7 @@ function drawMap() {
         "alpha": 0.1
     };
 
-    planes.push(circle);
+    items.push(circle);
 
     for (var i in aircrafts) {
         var image = {
@@ -158,7 +176,7 @@ function drawMap() {
             "positionScale": 1,
             "selectable": true,
             "desc":
-            '<li class="list_title">' + aircrafts[i].name + '<img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()"></li>' +
+            '<li class="list_title">' + aircrafts[i].name + close_sidebar_code + '</li>' +
             '<li class="list_title">Company</li><li>' + aircrafts[i].company + '</li>' +
             '<li class="list_title">From</li><li> ' + aircrafts[i].airport_from + '</li>' +
             '<li class="list_title">To</li><li> ' + aircrafts[i].airport_to + '</li>' +
@@ -172,7 +190,7 @@ function drawMap() {
             "longitudes": [aircrafts[i].longitude, aircrafts[i].first_long]
         };
         lines.push(line);
-        planes.push(image);
+        items.push(image);
     }
 
     var target = {
@@ -185,7 +203,7 @@ function drawMap() {
         "selectedColor": "#cc0000"
     };
 
-    planes.push(target);
-    mapSettings.dataProvider.images = planes;
+    items.push(target);
+    mapSettings.dataProvider.images = items;
     mapSettings.dataProvider.lines = lines;
 }
