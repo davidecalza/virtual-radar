@@ -33,8 +33,8 @@ a:active { /* selected link */
 
 #home_title{
     position: absolute;
-    top: 17%;
-    left: 9%;
+    top: 12px;
+    left: 112px;
 }
 
 #home_airplane_icon{
