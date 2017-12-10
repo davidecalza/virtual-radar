@@ -176,7 +176,7 @@ function drawItems() {
             "positionScale": 1,
             "selectable": true,
             "desc":
-            '<li class="list_title">' + aircrafts[i].name + close_sidebar_code + '</li>' +
+            '<li class="list_title" id="list_aircraft_name">' + aircrafts[i].name + close_sidebar_code + '</li>' +
             '<li class="list_title">Company</li><li>' + aircrafts[i].company + '</li>' +
             '<li class="list_title">From</li><li> ' + aircrafts[i].airport_from + '</li>' +
             '<li class="list_title">To</li><li> ' + aircrafts[i].airport_to + '</li>' +

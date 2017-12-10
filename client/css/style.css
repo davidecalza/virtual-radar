@@ -25,14 +25,25 @@ a:active { /* selected link */
     background-color: #512DA8 !important;
 }
 
-#title{
+#home_title_header{
     font-size: 2em;
     margin-left: 0;
     text-decoration: none;
 }
 
+#home_title{
+    position: absolute;
+    top: 17%;
+    left: 9%;
+}
+
 #home_airplane_icon{
-    margin-top: 4%;
+    margin-top: 15%;
+    margin-left: 20%;
+}
+
+#home_radar_icon{
+    margin-top: 15%;
 }
 
 /*Map*/
@@ -52,7 +63,7 @@ a:active { /* selected link */
 }
 
 #credits{
-    margin-left: 5%;
+    padding-left: 5%;
 }
 
 /* Sidebar */
@@ -118,7 +129,7 @@ a:active { /* selected link */
 .sidebar-nav li {
     padding-left: 20px;
     line-height: 40px;
-    color: white;
+    color: aliceblue;
 }
 
 #menu-toggle{
@@ -132,6 +143,10 @@ a:active { /* selected link */
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: -5px;
+}
+
+#list_aircraft_name{
+    width: 83%;
 }
 
 /*Screens*/
