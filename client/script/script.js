@@ -19,7 +19,7 @@ var mapSettings = {
         "images": [] //aircrafts
     },
 
-    "areasSettings": {"unlistedAreasColor": "#8dd9ef"},
+    "areasSettings": { "unlistedAreasColor": "#8dd9ef" },
 
     "imagesSettings": {
         "color": "#585869",
@@ -35,8 +35,8 @@ var mapSettings = {
         "alpha": 0.4
     },
 
-    "export": {"enabled": true},
-    "responsive": {"enabled": true},
+    "export": { "enabled": true },
+    "responsive": { "enabled": true },
 
     //Aircrafts onClick
     "listeners": [{
@@ -46,7 +46,7 @@ var mapSettings = {
         "method": function (e) {
             var str = '<ul class="sidebar-nav" id="sidebar-nav-content">';
             str += e.mapObject.desc;
-            str+='</ul>';
+            str += '</ul>';
 
             if (parseInt($("#wrapper").css("padding-left")) > 0) {
                 toggleSidebar();
@@ -97,7 +97,7 @@ function update(rate) {
     Downloads from the webservice and stores data on aircrafts array
 */
 function loadPlanes() {
-    $.get("http://localhost:8080/All", function (data) {
+    $.get("http://192.168.6.13:8080/All", function (data) {
         aircrafts = [];
         for (var i in data) {
             if (data.hasOwnProperty(i)) {
@@ -116,7 +116,8 @@ function loadPlanes() {
                     altitude: 0,
                     speed: 0,
                     first_long: 0,
-                    first_lat: 0
+                    first_lat: 0,
+                    pic_link: ''
                 };
 
                 aircraft.id = data[i].id;
@@ -133,6 +134,18 @@ function loadPlanes() {
                 aircraft.speed = data[i].speed;
                 aircraft.first_long = data[i].first_longitude;
                 aircraft.first_lat = data[i].first_latitude;
+
+                // $.get('https://api.qwant.com/api/search/images?count=20&offset=1&q=' + data[i].name, function (pic_data) {
+                //     var i = 0;
+                //     var ok = false;
+                //     var link;
+                //     while (ok == false) {
+                //         link = pic_data.data.result.items[i].media;
+                //         if (link.includes('jetphotos')) i++;
+                //         else ok = true;
+                //     }
+                //     aircraft.pic_link = link;
+                // });
 
                 aircrafts.push(aircraft)
             }
@@ -172,10 +185,11 @@ function drawItems() {
             "lineId": "line" + i,
             "flipDirection": false,
             "loop": false,
-            "scale": 0.05,
+            "scale": 0.06,
             "positionScale": 1,
             "selectable": true,
             "desc":
+            //'<li><img src="' + aircrafts[i].pic_link + '" href="' + aircrafts[i].pic_link + '" alt="Aircraft image" width="100%" height="auto"></li>' +
             '<li class="list_title" id="list_aircraft_name">' + aircrafts[i].name + close_sidebar_code + '</li>' +
             '<li class="list_title">Company</li><li>' + aircrafts[i].company + '</li>' +
             '<li class="list_title">From</li><li> ' + aircrafts[i].airport_from + '</li>' +
