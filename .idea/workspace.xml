@@ -3,7 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/gantt_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/gantt_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/gauge_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/gauge_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/map_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/map_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/map_json_external_function.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/map_json_external_function.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/pie_csv.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/pie_csv.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/pie_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/pie_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial2_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial2_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_csv.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_csv.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_json.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_json.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_with_dynamic_graphs.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/serial_with_dynamic_graphs.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/stock_csv_data_and_events.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/stock_csv_data_and_events.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/stock_csv_progressbar.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/dataloader/examples/stock_csv_progressbar.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/advanced.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/advanced.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/funnel.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/funnel.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/gantt.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/gantt.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/gauge.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/gauge.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/map.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/map.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie1.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie1.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie2.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie2.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie3.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie3.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie4.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/pie4.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/radar.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/radar.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial1.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial1.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial2.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial2.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial3.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/serial3.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/stock.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/stock.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/export/examples/xy.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/export/examples/xy.html" />
+      <change beforePath="$PROJECT_DIR$/client/ammap/plugins/responsive/examples/gantt.html" afterPath="$PROJECT_DIR$/client/ammap/plugins/responsive/examples/gantt.html" />
       <change beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
+      <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +54,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+            <state relative-caret-position="349">
+              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -34,9 +64,11 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4450">
-              <caret line="178" column="58" lean-forward="false" selection-start-line="178" selection-start-column="40" selection-end-line="178" selection-end-column="58" />
-              <folding />
+            <state relative-caret-position="3475">
+              <caret line="433" column="21" lean-forward="true" selection-start-line="433" selection-start-column="21" selection-end-line="433" selection-end-column="21" />
+              <folding>
+                <element signature="e#1949#7505#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,9 +76,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="39" column="60" lean-forward="false" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
-              <folding />
+            <state relative-caret-position="1050">
+              <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
+              <folding>
+                <element signature="e#2082#8533#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,6 +92,8 @@
       <find>i</find>
       <find>map</find>
       <find>aircrafts</find>
+      <find>dragIcon</find>
+      <find>.svg</find>
     </findStrings>
     <replaceStrings>
       <replace>t</replace>
@@ -91,8 +127,9 @@
         <option value="$PROJECT_DIR$/server/webservice/index.js" />
         <option value="$PROJECT_DIR$/server/conf/deleteTables.js" />
         <option value="$PROJECT_DIR$/server/webservice/queries.js" />
-        <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/client/amcharts/amcharts.js" />
         <option value="$PROJECT_DIR$/client/script/script.js" />
+        <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/css/style.css" />
       </list>
     </option>
@@ -107,10 +144,10 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1426" />
-    <option name="y" value="-1631" />
-    <option name="width" value="2902" />
-    <option name="height" value="1582" />
+    <option name="x" value="419" />
+    <option name="y" value="-1228" />
+    <option name="width" value="1940" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -231,6 +268,7 @@
       <workItem from="1512827914862" duration="1164000" />
       <workItem from="1512900586321" duration="2592000" />
       <workItem from="1512903677011" duration="97000" />
+      <workItem from="1513148759083" duration="5259000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -369,7 +407,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54899000" />
+    <option name="totallyTimeSpent" value="60158000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,13 +419,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1426" y="-1631" width="2902" height="1582" extended-state="6" />
+    <frame x="-11" y="-1631" width="2902" height="1582" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17877984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286219" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.778563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -401,7 +440,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979977" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -467,13 +505,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/webservice/queries.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="71" lean-forward="false" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/conf/dropDatabase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -785,26 +816,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
+    <entry file="file://$PROJECT_DIR$/client/amcharts/amcharts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="39" column="60" lean-forward="false" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+        <state relative-caret-position="45250">
+          <caret line="1810" column="34" lean-forward="false" selection-start-line="1810" selection-start-column="30" selection-end-line="1810" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4450">
-          <caret line="178" column="58" lean-forward="false" selection-start-line="178" selection-start-column="40" selection-end-line="178" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="3475">
+          <caret line="433" column="21" lean-forward="true" selection-start-line="433" selection-start-column="21" selection-end-line="433" selection-end-column="21" />
+          <folding>
+            <element signature="e#1949#7505#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="300" column="0" lean-forward="true" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
+          <folding>
+            <element signature="e#2082#8533#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        <state relative-caret-position="349">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="27" />
           <folding />
         </state>
       </provider>
