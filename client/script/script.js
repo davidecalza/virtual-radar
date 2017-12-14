@@ -1,7 +1,16 @@
 var aircrafts = []; //List of aircrafts to display
+var selected_aircraft_id;
 
 //code of the X used to close the sidebar
-var close_sidebar_code = '<img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="toggleSidebar()">';
+var close_sidebar_code = '<img src="./cont/cancel.svg" width="30" height="30" alt="" id="sidebar_cancel_icon" onclick="closeSidebar()">';
+
+/*  closeSidebar
+    Triggers when sidebar gets closed with the X
+*/
+function closeSidebar(){
+    selected_aircraft_id = '';
+    toggleSidebar();
+}
 
 //Settings of the map to draw
 var mapSettings = {
@@ -44,6 +53,8 @@ var mapSettings = {
         //If the sidebar is already toggled, the sidebar closes down and toggles with the new data
         //Otherwise it just toggles with the selected aircraft information
         "method": function (e) {
+            selected_aircraft_id = e.mapObject.id;
+
             var str = '<ul class="sidebar-nav" id="sidebar-nav-content">';
             str += e.mapObject.desc;
             str += '</ul>';
@@ -69,7 +80,7 @@ var mapSettings = {
 var chartSettings =
     {
         "type": "serial",
-        "theme": "light",
+        "theme": "dark",
         "marginTop":0,
         "marginRight": 80,
         "dataProvider": [{
@@ -408,11 +419,16 @@ function drawItems() {
     items.push(circle);
 
     for (var i in aircrafts) {
+        var plane_color;
+        if (aircrafts[i].id === selected_aircraft_id)
+            plane_color = '#cc0000';
+        else
+            plane_color = '#000000';
         var image = {
             "id": aircrafts[i].id,
             "svgPath": "M357,12.8h-51l-127.5,204H38.3C17.9,216.8,0,234.6,0,255s17.9,38.3,38.3,38.3h140.3l127.5,204h51l-63.8-204h140.3l38.3,51H510L484.5,255l25.5-89.3h-38.3l-38.3,51H293.3L357,12.8z",
             "positionOnLine": 0,
-            "color": "#000000",
+            "color": plane_color,
             "alpha": 1,
             "animateAlongLine": false,
             "lineId": "line" + i,
@@ -427,7 +443,7 @@ function drawItems() {
             '<li class="list_title">Company</li><li>' + aircrafts[i].company + '</li>' +
             '<li class="list_title">From</li><li> ' + aircrafts[i].airport_from + '</li>' +
             '<li class="list_title">To</li><li> ' + aircrafts[i].airport_to + '</li>' +
-            '<li class="list_title">Speed</li><li> ' + aircrafts[i].speed + '</li>'
+            '<li class="list_title" id="speed_chart_title">Speed chart</li>'
         };
         var line = {
             "id": "line" + i,

@@ -56,8 +56,9 @@ a:active { /* selected link */
 /*Chart*/
 #chartdiv {
     width	: 100%;
-    height	: 20em;
-    background-color: white;
+    height	: 24em;
+    background-color: #30303d;
+    color: #FFFFFF;
 }
 
 /*Footer*/
@@ -91,14 +92,14 @@ a:active { /* selected link */
 }
 
 #wrapper.toggled {
-    padding-left: 350px;
+    padding-left: 400px;
 }
 
 #sidebar-wrapper {
     z-index: 1000;
     position: absolute;
     width: 0;
-    height: 34em;
+    height: 30em;
     right: 0;
     overflow-y: auto;
     background: #7e57c2;
@@ -112,7 +113,7 @@ a:active { /* selected link */
     z-index: 1000;
     position: absolute;
     width: 0;
-    height: 20em;
+    height: 24em;
     right: 0;
     bottom: 13px;
     overflow-y: auto;
@@ -124,11 +125,11 @@ a:active { /* selected link */
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 350px;
+    width: 400px;
 }
 
 #wrapper.toggled #sidebar-chart {
-    width: 350px;
+    width: 400px;
 }
 
 #page-content-wrapper {
@@ -139,17 +140,18 @@ a:active { /* selected link */
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -350px;
+    margin-right: -400px;
 }
 
 .sidebar-nav {
     position: absolute;
     top: 0;
     right: 0;
-    width: 350px;
+    width: 400px;
     margin: 0;
     padding: 0;
     list-style: none;
+    height: 98%;
 }
 
 .sidebar-nav li {
@@ -171,6 +173,11 @@ a:active { /* selected link */
     margin-bottom: -5px;
 }
 
+#speed_chart_title{
+    position: absolute;
+    bottom: 0;
+}
+
 #list_aircraft_name{
     width: 83%;
 }
@@ -181,19 +188,19 @@ a:active { /* selected link */
         padding-left: 0;
     }
     #wrapper.toggled {
-        padding-left: 350px;
+        padding-left: 400px;
     }
     #sidebar-wrapper {
         width: 0;
     }
     #wrapper.toggled #sidebar-wrapper {
-        width: 350px;
+        width: 400px;
     }
     #sidebar-chart {
         width: 0;
     }
     #wrapper.toggled #sidebar-chart {
-        width: 350px;
+        width: 400px;
     }
     #page-content-wrapper {
         padding: 20px;
