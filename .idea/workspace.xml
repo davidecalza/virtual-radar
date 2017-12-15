@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/readme" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,37 +20,7 @@
     <favorites_list name="VirtualRadar" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/script/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="264" column="0" lean-forward="true" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-              <folding>
-                <element signature="e#206#350#0" expanded="false" />
-                <element signature="e#582#1656#0" expanded="false" />
-                <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
-                <element signature="n#!!block;n#toggleSidebar#0" expanded="false" />
-                <element signature="n#!!block;n#update#0" expanded="false" />
-                <element signature="n#!!block;n#zoomChart#0" expanded="false" />
-                <element signature="n#!!block;n#drawItems#0" expanded="false" />
-                <marker date="1513348984304" expanded="true" signature="2923:2938" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -104,6 +73,7 @@
         <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/script/script.js" />
+        <option value="$PROJECT_DIR$/readme" />
       </list>
     </option>
   </component>
@@ -277,7 +247,7 @@
       <workItem from="1513248915072" duration="4162000" />
       <workItem from="1513264143911" duration="366000" />
       <workItem from="1513264533545" duration="14326000" />
-      <workItem from="1513345085095" duration="3919000" />
+      <workItem from="1513345085095" duration="4294000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -454,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513347105596</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="2_Speed chart lines display bug fix: negative values">
+      <created>1513349045626</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1513349045626</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83397000" />
+    <option name="totallyTimeSpent" value="83772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,7 +448,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17877984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -529,7 +505,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working airplanes display" />
     <MESSAGE value="Track management client side (work in progress)" />
     <MESSAGE value="Update server side load data (added first longitude and latitude)" />
     <MESSAGE value="Working track line (plane flipped in the other way)" />
@@ -554,7 +529,8 @@
     <MESSAGE value="Real time speed chart update" />
     <MESSAGE value="SVG image not found bug fix" />
     <MESSAGE value="Speed chart lines display bug fix: negative values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Speed chart lines display bug fix: negative values" />
+    <MESSAGE value="2_Speed chart lines display bug fix: negative values" />
+    <option name="LAST_COMMIT_MESSAGE" value="2_Speed chart lines display bug fix: negative values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -563,13 +539,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/conf/dropDatabase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -886,10 +855,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="264" column="0" lean-forward="true" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+        <state relative-caret-position="4625">
+          <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
           <folding>
             <element signature="e#206#350#0" expanded="false" />
             <element signature="e#582#1656#0" expanded="false" />

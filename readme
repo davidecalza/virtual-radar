@@ -1,0 +1,8 @@
+Virtual radar
+developed by Davide Calza'
+
+WEBSERVICE:
+to run the webservice, go to ./server/webservice and run index.js file with node.
+
+CLIENT:
+you can change the webservice ip address on ./client/script/script.js (WS_IP variable)
