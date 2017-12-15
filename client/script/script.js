@@ -3,7 +3,7 @@ var WS_IP = '192.168.1.20';
 
 var aircrafts = []; //List of aircrafts to display
 var selected_aircraft_id; //ID of the selected aircraft
-//var chart; //Speed chart
+var chart; //Speed chart
 
 var speed_tracking = [
     {
@@ -65,64 +65,6 @@ var mapSettings = {
         }
     }]
 };
-
-//Settings of the charts
-// var chartSettings =
-//     {
-//         "type": "serial",
-//         "theme": "dark",
-//         "marginTop": 0,
-//         "marginRight": 80,
-//         "dataProvider": [],
-//         "valueAxes": [{
-//             "axisAlpha": 0,
-//             "position": "left"
-//         }],
-//         "graphs": [{
-//             "id": "g1",
-//             "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]] knots</span></b>",
-//             "lineColor": "#d1655d",
-//             "lineThickness": 2,
-//             "negativeLineColor": "#637bb6",
-//             "type": "smoothedLine",
-//             "valueField": "speed"
-//         }],
-//         "chartScrollbar": {
-//             "graph": "g1",
-//             "gridAlpha": 0,
-//             "color": "#888888",
-//             "scrollbarHeight": 55,
-//             "backgroundAlpha": 0,
-//             "selectedBackgroundAlpha": 0.1,
-//             "selectedBackgroundColor": "#888888",
-//             "graphFillAlpha": 0,
-//             "autoGridCount": true,
-//             "selectedGraphFillAlpha": 0,
-//             "graphLineAlpha": 0.2,
-//             "graphLineColor": "#c2c2c2",
-//             "selectedGraphLineColor": "#888888",
-//             "selectedGraphLineAlpha": 1
-//         },
-//         "chartCursor": {
-//             "categoryBalloonDateFormat": "JJ:NN:SS",
-//             "cursorAlpha": 0,
-//             "valueLineEnabled": true,
-//             "valueLineBalloonEnabled": true,
-//             "valueLineAlpha": 0.5,
-//             "fullWidth": true
-//         },
-//         "dataDateFormat": "JJ:NN:SS",
-//         "categoryField": "time",
-//         "categoryAxis": {
-//             "minPeriod": "ss",
-//             "parseDates": true,
-//             "minorGridAlpha": 0.1,
-//             "minorGridEnabled": true
-//         },
-//         "export": {
-//             "enabled": true
-//         }
-//     };
 
 /*  closeSidebar
     Triggers when sidebar gets closed with the X
@@ -220,7 +162,7 @@ function onAircraftClick(e){
         }
     };
 
-    var chart = AmCharts.makeChart("chartdiv", chartSettings);
+    chart = AmCharts.makeChart("chartdiv", chartSettings);
 
     chart.addListener("rendered", zoomChart);
     if(chart.zoomChart){
@@ -255,8 +197,8 @@ function update(rate) {
         map.validateData(map.dataProvider.lines);
         map.validateData(map.dataProvider.images);
 
-        //chart.dataProvider.shift();
-        //chart.validateData();
+        if(chart != null)
+            chart.validateData();
     }, rate);
 }
 
