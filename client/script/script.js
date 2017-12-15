@@ -270,13 +270,21 @@ function loadPlanes() {
                 var time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 
                 for(var x in speed_tracking){
-                    if(speed_tracking[x].id === aircraft.id && aircraft.speed > 0 && time > speed_tracking[x].data[speed_tracking[x].data.length-1].time){
+                    if(speed_tracking[x].id === aircraft.id && aircraft.speed > 0){
                         var objData = {
                             "time": time,
                             "speed": aircraft.speed
                         };
-                        speed_tracking[x].data.push(objData);
-                        exists = true;
+                        if(d.getMinutes() > JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1]){
+                            speed_tracking[x].data.push(objData);
+                            exists = true;
+                        }
+                        else if(d.getMinutes() == JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1]
+                                && d.getSeconds() > JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[2].split('"')[0])
+                        {
+                            speed_tracking[x].data.push(objData);
+                            exists = true;
+                        }
                         break;
                     }
                 }
