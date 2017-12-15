@@ -1,5 +1,5 @@
 body{
-    background-color: #512DA8 !important;
+    background-color: #1c1c27 !important;
     overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@ a:active { /* selected link */
 
 /*Header*/
 #home_navbar{
-    background-color: #512DA8 !important;
+    background-color: #1c1c27 !important;
 }
 
 #home_title_header{
@@ -63,7 +63,7 @@ a:active { /* selected link */
 
 /*Footer*/
 .footer{
-    background-color: #512DA8 !important;
+    background-color: #1c1c27 !important;
     color: white;
     height: 2em;
     font-family: unset;
@@ -102,7 +102,7 @@ a:active { /* selected link */
     height: 30em;
     right: 0;
     overflow-y: auto;
-    background: #7e57c2;
+    background: #30303d;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -180,6 +180,7 @@ a:active { /* selected link */
 
 #list_aircraft_name{
     width: 83%;
+    font-size: 25px;
 }
 
 /*Screens*/
