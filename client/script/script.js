@@ -275,12 +275,12 @@ function loadPlanes() {
                             "time": time,
                             "speed": aircraft.speed
                         };
-                        if(d.getMinutes().toString() > JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1]){
+                        if(d.getMinutes() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1])){
                             speed_tracking[x].data.push(objData);
                             exists = true;
                         }
-                        else if(d.getMinutes().toString() === JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1]
-                                && d.getSeconds().toString() > JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[2].split('"')[0])
+                        else if(d.getMinutes() === parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1])
+                                && d.getSeconds() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[2].split('"')[0]))
                         {
                             //alert('seconds');
                             speed_tracking[x].data.push(objData);

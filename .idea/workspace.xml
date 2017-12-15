@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="295" column="34" lean-forward="true" selection-start-line="295" selection-start-column="34" selection-end-line="295" selection-end-column="34" />
+            <state relative-caret-position="84">
+              <caret line="274" column="41" lean-forward="true" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
               <folding>
                 <element signature="e#206#350#0" expanded="false" />
                 <element signature="e#582#1656#0" expanded="false" />
@@ -33,7 +34,7 @@
                 <element signature="n#!!block;n#update#0" expanded="false" />
                 <element signature="n#!!block;n#zoomChart#0" expanded="false" />
                 <element signature="n#!!block;n#drawItems#0" expanded="false" />
-                <marker date="1513350716544" expanded="true" signature="2923:2938" ph="..." />
+                <marker date="1513350966396" expanded="true" signature="2923:2938" ph="..." />
               </folding>
             </state>
           </provider>
@@ -264,7 +265,7 @@
       <workItem from="1513264143911" duration="366000" />
       <workItem from="1513264533545" duration="14326000" />
       <workItem from="1513345085095" duration="4359000" />
-      <workItem from="1513350440142" duration="367000" />
+      <workItem from="1513350440142" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -462,11 +463,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513350803997</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added svg files to path (.svg file unable to find bug fix)">
+      <created>1513350858848</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1513350858848</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84204000" />
+    <option name="totallyTimeSpent" value="84393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,7 +545,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working track line (plane flipped in the other way)" />
     <MESSAGE value="WebService parametrized (/Run)" />
     <MESSAGE value="WebService parametrized not working (/Run) changed loadData running mode" />
     <MESSAGE value="Working planes and tracks display" />
@@ -562,7 +569,8 @@
     <MESSAGE value="2_Speed chart lines display bug fix: negative values" />
     <MESSAGE value="Added readme.txt file" />
     <MESSAGE value="3_Bug fix real time speed chart update" />
-    <option name="LAST_COMMIT_MESSAGE" value="3_Bug fix real time speed chart update" />
+    <MESSAGE value="Added svg files to path (.svg file unable to find bug fix)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added svg files to path (.svg file unable to find bug fix)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -893,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="295" column="34" lean-forward="true" selection-start-line="295" selection-start-column="34" selection-end-line="295" selection-end-column="34" />
+        <state relative-caret-position="84">
+          <caret line="274" column="41" lean-forward="true" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
           <folding>
             <element signature="e#206#350#0" expanded="false" />
             <element signature="e#582#1656#0" expanded="false" />
@@ -903,7 +911,7 @@
             <element signature="n#!!block;n#update#0" expanded="false" />
             <element signature="n#!!block;n#zoomChart#0" expanded="false" />
             <element signature="n#!!block;n#drawItems#0" expanded="false" />
-            <marker date="1513350716544" expanded="true" signature="2923:2938" ph="..." />
+            <marker date="1513350966396" expanded="true" signature="2923:2938" ph="..." />
           </folding>
         </state>
       </provider>
