@@ -1,5 +1,5 @@
 //IP OF THE WEBSERVICE
-var WS_IP = '192.168.1.20';
+var WS_IP = 'localhost';
 
 var aircrafts = []; //List of aircrafts to display
 var selected_aircraft_id; //ID of the selected aircraft
@@ -78,7 +78,7 @@ function closeSidebar() {
     Triggers on aircraft click
     **CONTAINS CHART SETTINGS**
 */
-function onAircraftClick(e){
+function onAircraftClick(e) {
     selected_aircraft_id = e.mapObject.id;
 
     var str = '<ul class="sidebar-nav" id="sidebar-nav-content">';
@@ -99,8 +99,8 @@ function onAircraftClick(e){
     }
 
     var ix = -1;
-    for (var i in speed_tracking){
-        if(speed_tracking[i].id === e.mapObject.id) {
+    for (var i in speed_tracking) {
+        if (speed_tracking[i].id === e.mapObject.id) {
             ix = i;
             break;
         }
@@ -165,7 +165,7 @@ function onAircraftClick(e){
     chart = AmCharts.makeChart("chartdiv", chartSettings);
 
     chart.addListener("rendered", zoomChart);
-    if(chart.zoomChart){
+    if (chart.zoomChart) {
         chart.zoomChart();
     }
 }
@@ -197,7 +197,7 @@ function update(rate) {
         map.validateData(map.dataProvider.lines);
         map.validateData(map.dataProvider.images);
 
-        if(chart != null)
+        if (chart != null)
             chart.validateData();
     }, rate);
 }
@@ -213,7 +213,7 @@ function zoomChart() {
     Downloads from the webservice and stores data on aircrafts array
 */
 function loadPlanes() {
-    $.get("http://" + WS_IP +":8080/All", function (data) {
+    $.get("http://" + WS_IP + ":8080/All", function (data) {
         aircrafts = [];
         for (var i in data) {
             if (data.hasOwnProperty(i)) {
@@ -269,28 +269,29 @@ function loadPlanes() {
                 var d = new Date;
                 var time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 
-                for(var x in speed_tracking){
-                    if(speed_tracking[x].id === aircraft.id && aircraft.speed > 0){
-                        var objData = {
-                            "time": time,
-                            "speed": aircraft.speed
-                        };
-                        if(d.getMinutes() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1])){
-                            speed_tracking[x].data.push(objData);
-                            exists = true;
+                for (var x in speed_tracking) {
+                    if (speed_tracking[x].id === aircraft.id) {
+                        exists = true;
+                        if (aircraft.speed > 0) {
+                            var objData = {
+                                "time": time,
+                                "speed": aircraft.speed
+                            };
+                            if (d.getMinutes() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length - 1].time).split(':')[1])) {
+                                speed_tracking[x].data.push(objData);
+                            }
+                            else if (d.getMinutes() === parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length - 1].time).split(':')[1])
+                                && d.getSeconds() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length - 1].time).split(':')[2].split('"')[0])) {
+                                //alert('seconds');
+                                speed_tracking[x].data.push(objData);
+                            }
+                            break;
                         }
-                        else if(d.getMinutes() === parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[1])
-                                && d.getSeconds() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length-1].time).split(':')[2].split('"')[0]))
-                        {
-                            //alert('seconds');
-                            speed_tracking[x].data.push(objData);
-                            exists = true;
-                        }
-                        break;
                     }
                 }
 
                 if (!exists) {
+                    alert('new aircraft');
                     var obj = {
                         "id": aircraft.id,
                         "data": [{
