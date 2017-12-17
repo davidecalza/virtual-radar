@@ -236,13 +236,21 @@ function loadPlanes() {
                     pic_link: ''
                 };
 
+                var company = data[i].company;
+                var airport_from = data[i].airport_from;
+                var airport_to = data[i].airport_to;
+
+                if(company === null) company = 'Unknown';
+                if(airport_from === null) airport_from = 'Unknown';
+                if(airport_to === null) airport_to = 'Unknown';
+
                 aircraft.id = data[i].id;
                 aircraft.reg = data[i].reg;
                 aircraft.name = data[i].name;
-                aircraft.company = data[i].company;
+                aircraft.company = company;
                 aircraft.id_flight = data[i].id_flight;
-                aircraft.airport_from = data[i].airport_from;
-                aircraft.airport_to = data[i].airport_to;
+                aircraft.airport_from = airport_from;
+                aircraft.airport_to = airport_to;
                 aircraft.date_track = data[i].date_track;
                 aircraft.latitude = data[i].latitude;
                 aircraft.longitude = data[i].longitude;

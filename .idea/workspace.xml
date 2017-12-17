@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
       <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -35,14 +34,14 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
+            <state relative-caret-position="413">
+              <caret line="244" column="55" lean-forward="false" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
               <folding>
                 <element signature="e#203#347#0" expanded="false" />
                 <element signature="e#579#1653#0" expanded="false" />
                 <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
                 <element signature="n#!!block;n#drawItems#0" expanded="false" />
-                <marker date="1513503068655" expanded="true" signature="2923:2938" ph="..." />
+                <marker date="1513503409407" expanded="true" signature="2923:2938" ph="..." />
               </folding>
             </state>
           </provider>
@@ -278,7 +277,7 @@
       <workItem from="1513374256838" duration="523000" />
       <workItem from="1513500453397" duration="24000" />
       <workItem from="1513500496933" duration="543000" />
-      <workItem from="1513501065827" duration="2045000" />
+      <workItem from="1513501065827" duration="2418000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -497,11 +496,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513502322526</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="CSS update">
+      <created>1513503132019</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1513503132020</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87598000" />
+    <option name="totallyTimeSpent" value="87971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -584,7 +590,6 @@
     <MESSAGE value="Added sidebar toggle function on planes click" />
     <MESSAGE value="Working sidebar displaying aircrafts informations" />
     <MESSAGE value="Client side code documentation" />
-    <MESSAGE value="CSS update" />
     <MESSAGE value="Selected aircraft changes color (red)" />
     <MESSAGE value="Speed chart update successful (bugs in displaying data)" />
     <MESSAGE value="Working speed chart display (not real-time)" />
@@ -597,7 +602,8 @@
     <MESSAGE value="Added svg files to path (.svg file unable to find bug fix)" />
     <MESSAGE value="4_Bug fix real time speed chart update" />
     <MESSAGE value="Bug fix: Multiple aircrafts data in speed charts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix: Multiple aircrafts data in speed charts" />
+    <MESSAGE value="CSS update" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,14 +936,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
+        <state relative-caret-position="413">
+          <caret line="244" column="55" lean-forward="false" selection-start-line="244" selection-start-column="55" selection-end-line="244" selection-end-column="55" />
           <folding>
             <element signature="e#203#347#0" expanded="false" />
             <element signature="e#579#1653#0" expanded="false" />
             <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
             <element signature="n#!!block;n#drawItems#0" expanded="false" />
-            <marker date="1513503068655" expanded="true" signature="2923:2938" ph="..." />
+            <marker date="1513503409407" expanded="true" signature="2923:2938" ph="..." />
           </folding>
         </state>
       </provider>
