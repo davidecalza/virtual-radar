@@ -46,6 +46,18 @@ a:active { /* selected link */
 #home_radar_icon{
     margin-top: 15%;
 }
+/*New aircraft popup*/
+#new_aircraft_popup {
+    position: fixed;
+    top: 6em;
+    left: 4em;
+    width: 14em;
+    height: 5.5em;
+    padding-left: 1.5em;
+    padding-top: 1em;
+    background: rgba(28, 28, 39, 0.7);
+    color: #FFFFFF;
+}
 
 /*Map*/
 #mapdiv {

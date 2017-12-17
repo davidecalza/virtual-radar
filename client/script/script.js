@@ -307,6 +307,17 @@ function loadPlanes() {
                         }]
                     };
                     speed_tracking.push(obj);
+
+                    //New aircraft popup
+                    var str =
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '    <span aria-hidden="true">&times;</span>' +
+                        '</button>' +
+                        '<strong>New aircraft!</strong>' +
+                        '<p>Total aircrafts: '+ data.length +'</p>';
+                    $('#new_aircraft_popup').html(str);
+                    $('.alert').fadeIn(1000);
+                    setTimeout(function(){$('.alert').fadeOut(1000)}, 4000);
                 }
             }
         }
