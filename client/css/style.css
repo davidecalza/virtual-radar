@@ -23,6 +23,7 @@ a:active { /* selected link */
 /*Header*/
 #home_navbar{
     background-color: #1c1c27 !important;
+    height: 4.7em;
 }
 
 #home_title_header{
@@ -115,7 +116,7 @@ a:active { /* selected link */
     width: 0;
     height: 24em;
     right: 0;
-    bottom: 13px;
+    top: 34.7em;
     overflow-y: auto;
     background: #000000;
     -webkit-transition: all 0.5s ease;

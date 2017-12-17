@@ -291,7 +291,6 @@ function loadPlanes() {
                 }
 
                 if (!exists) {
-                    alert('new aircraft');
                     var obj = {
                         "id": aircraft.id,
                         "data": [{

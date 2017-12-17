@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/css/style.css" afterPath="$PROJECT_DIR$/client/css/style.css" />
       <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/index.html">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+            <state relative-caret-position="-225">
+              <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -34,27 +35,15 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="217" column="28" lean-forward="false" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="28" />
+            <state relative-caret-position="200">
+              <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
               <folding>
                 <element signature="e#203#347#0" expanded="false" />
                 <element signature="e#579#1653#0" expanded="false" />
                 <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
-                <element signature="n#!!block;n#toggleSidebar#0" expanded="false" />
-                <element signature="n#!!block;n#zoomChart#0" expanded="false" />
                 <element signature="n#!!block;n#drawItems#0" expanded="false" />
-                <marker date="1513502001023" expanded="true" signature="2923:2938" ph="..." />
+                <marker date="1513503068655" expanded="true" signature="2923:2938" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4225">
-              <caret line="169" column="20" lean-forward="false" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -106,9 +95,9 @@
         <option value="$PROJECT_DIR$/server/conf/deleteTables.js" />
         <option value="$PROJECT_DIR$/server/webservice/queries.js" />
         <option value="$PROJECT_DIR$/client/amcharts/amcharts.js" />
-        <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/readme" />
+        <option value="$PROJECT_DIR$/client/css/style.css" />
         <option value="$PROJECT_DIR$/client/script/script.js" />
       </list>
     </option>
@@ -289,7 +278,7 @@
       <workItem from="1513374256838" duration="523000" />
       <workItem from="1513500453397" duration="24000" />
       <workItem from="1513500496933" duration="543000" />
-      <workItem from="1513501065827" duration="1177000" />
+      <workItem from="1513501065827" duration="2045000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -501,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513351060162</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Bug fix: Multiple aircrafts data in speed charts">
+      <created>1513502322526</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1513502322526</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86730000" />
+    <option name="totallyTimeSpent" value="87598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,7 +572,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="WebService parametrized not working (/Run) changed loadData running mode" />
     <MESSAGE value="Working planes and tracks display" />
     <MESSAGE value="Bug fix server side - delete tables not working sometimes" />
     <MESSAGE value="Bug fix server side - draining pool" />
@@ -601,7 +596,8 @@
     <MESSAGE value="3_Bug fix real time speed chart update" />
     <MESSAGE value="Added svg files to path (.svg file unable to find bug fix)" />
     <MESSAGE value="4_Bug fix real time speed chart update" />
-    <option name="LAST_COMMIT_MESSAGE" value="4_Bug fix real time speed chart update" />
+    <MESSAGE value="Bug fix: Multiple aircrafts data in speed charts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix: Multiple aircrafts data in speed charts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -918,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
+        <state relative-caret-position="25">
           <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
           <folding />
         </state>
@@ -926,24 +922,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4225">
-          <caret line="169" column="20" lean-forward="false" selection-start-line="169" selection-start-column="20" selection-end-line="169" selection-end-column="20" />
+        <state relative-caret-position="-225">
+          <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="217" column="28" lean-forward="false" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="28" />
+        <state relative-caret-position="200">
+          <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
           <folding>
             <element signature="e#203#347#0" expanded="false" />
             <element signature="e#579#1653#0" expanded="false" />
             <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
-            <element signature="n#!!block;n#toggleSidebar#0" expanded="false" />
-            <element signature="n#!!block;n#zoomChart#0" expanded="false" />
             <element signature="n#!!block;n#drawItems#0" expanded="false" />
-            <marker date="1513502001023" expanded="true" signature="2923:2938" ph="..." />
+            <marker date="1513503068655" expanded="true" signature="2923:2938" ph="..." />
           </folding>
         </state>
       </provider>
