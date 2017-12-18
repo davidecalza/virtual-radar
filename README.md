@@ -6,7 +6,7 @@ The project contains both client and server side.
 
 * Node (to run the web service)
 
-### To manage the database
+## To manage the database
 Go to the **./server/conf** folder.
 To create the database:
 ```
@@ -21,13 +21,13 @@ To clean existing tables of the database:
 $ node deleteTables.js
 ```
 
-### To run the web service
+## To run the web service
 Go to the **./server/webservice** folder and run
 ```
 $ node index.js
 ```
 
-### Client side configuration
+## Client side configuration
 To change the IP address of the web service to get data from, go to the folder **./client/script/script.js** and edit the **WP_IP variable**
 ```javascript
 WP_IP = "192.168.1.20";
