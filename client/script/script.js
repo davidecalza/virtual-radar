@@ -260,18 +260,6 @@ function loadPlanes() {
                 aircraft.first_long = data[i].first_longitude;
                 aircraft.first_lat = data[i].first_latitude;
 
-                // $.get('https://api.qwant.com/api/search/images?count=20&offset=1&q=' + data[i].name, function (pic_data) {
-                //     var i = 0;
-                //     var ok = false;
-                //     var link;
-                //     while (ok == false) {
-                //         link = pic_data.data.result.items[i].media;
-                //         if (link.includes('jetphotos')) i++;
-                //         else ok = true;
-                //     }
-                //     aircraft.pic_link = link;
-                // });
-
                 aircrafts.push(aircraft);
 
                 var exists = false;
@@ -291,7 +279,6 @@ function loadPlanes() {
                             }
                             else if (d.getMinutes() === parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length - 1].time).split(':')[1])
                                 && d.getSeconds() > parseInt(JSON.stringify(speed_tracking[x].data[speed_tracking[x].data.length - 1].time).split(':')[2].split('"')[0])) {
-                                //alert('seconds');
                                 speed_tracking[x].data.push(objData);
                             }
                             break;
@@ -310,15 +297,7 @@ function loadPlanes() {
                     speed_tracking.push(obj);
 
                     //New aircraft popup
-                    var str =
-                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                        '    <span aria-hidden="true">&times;</span>' +
-                        '</button>' +
-                        '<strong>New aircraft!</strong>' +
-                        '<p>Total aircrafts: '+ data.length +'</p>';
-                    $('#new_aircraft_popup').html(str);
-                    $('.alert').fadeIn(1000);
-                    setTimeout(function(){$('.alert').fadeOut(1000)}, 4000);
+                    showPopup('New aircraft!', 'Total aircrafts: ' + data.length);
                 }
             }
         }
@@ -330,7 +309,7 @@ function loadPlanes() {
                     ok = true;
             }
             if(!ok) {
-                //alert("aircraft out of range");
+                showPopup('A plane left!', 'Total aircrafts: ' + data.length);
                 speed_tracking.splice(t, 1);
             }
         }
@@ -409,4 +388,21 @@ function drawItems() {
     items.push(target);
     mapSettings.dataProvider.images = items;
     mapSettings.dataProvider.lines = lines;
+}
+
+/*  showPopup
+    Shows a popup with given title and text
+    title --> title of the popup
+    text --> text of the popup
+*/
+function showPopup(title, text){
+    var str =
+        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+        '    <span aria-hidden="true">&times;</span>' +
+        '</button>' +
+        '<strong>'+title+'</strong>' +
+        '<p>'+text+'</p>';
+    $('#new_aircraft_popup').html(str);
+    $('.alert').fadeIn(1000);
+    setTimeout(function(){$('.alert').fadeOut(1000)}, 4000);
 }

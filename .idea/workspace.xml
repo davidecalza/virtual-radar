@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="Update readme">
+    <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/client/script/script.js" afterPath="$PROJECT_DIR$/client/script/script.js" />
     </list>
@@ -44,17 +44,20 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/script/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="332" column="18" lean-forward="false" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+            <state relative-caret-position="453">
+              <caret line="311" column="40" lean-forward="false" selection-start-line="311" selection-start-column="40" selection-end-line="311" selection-end-column="40" />
               <folding>
                 <element signature="e#203#347#0" expanded="false" />
                 <element signature="e#579#1653#0" expanded="false" />
                 <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
                 <element signature="n#!!block;n#onAircraftClick#0" expanded="false" />
+                <element signature="n#!!block;n#toggleSidebar#0" expanded="false" />
+                <element signature="n#!!block;n#update#0" expanded="false" />
                 <element signature="n#!!block;n#zoomChart#0" expanded="false" />
                 <element signature="n#!!block;n#drawItems#0" expanded="false" />
-                <marker date="1513614273076" expanded="true" signature="2923:2938" ph="..." />
-                <marker date="1513614273076" expanded="true" signature="9895:9902" ph="×" />
+                <element signature="n#!!block;n#showPopup#0" expanded="false" />
+                <marker date="1513615048170" expanded="true" signature="2923:2938" ph="..." />
+                <marker date="1513615048170" expanded="true" signature="13000:13007" ph="×" />
               </folding>
             </state>
           </provider>
@@ -296,7 +299,7 @@
       <workItem from="1513583668896" duration="1258000" />
       <workItem from="1513585694757" duration="114000" />
       <workItem from="1513612526063" duration="920000" />
-      <workItem from="1513613461018" duration="819000" />
+      <workItem from="1513613461018" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -557,11 +560,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513584383881</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Speed array cleaning on aircraft getting out of range">
+      <created>1513614323705</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1513614323705</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98445000" />
+    <option name="totallyTimeSpent" value="99380000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,7 +665,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Client side documentation" />
     <MESSAGE value="Optimized refresh" />
     <MESSAGE value="Allowed users navigation around the map (zoom blocked due to range SVG object getting bigger as the zoom increases)" />
     <MESSAGE value="Added onClick function on airplane objects" />
@@ -680,7 +689,8 @@
     <MESSAGE value="Popup CSS update" />
     <MESSAGE value="General bug fix" />
     <MESSAGE value="Update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
+    <MESSAGE value="Speed array cleaning on aircraft getting out of range" />
+    <option name="LAST_COMMIT_MESSAGE" value="Speed array cleaning on aircraft getting out of range" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1008,17 +1018,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/script/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="332" column="18" lean-forward="false" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+        <state relative-caret-position="453">
+          <caret line="311" column="40" lean-forward="false" selection-start-line="311" selection-start-column="40" selection-end-line="311" selection-end-column="40" />
           <folding>
             <element signature="e#203#347#0" expanded="false" />
             <element signature="e#579#1653#0" expanded="false" />
             <element signature="n#!!block;n#closeSidebar#0" expanded="false" />
             <element signature="n#!!block;n#onAircraftClick#0" expanded="false" />
+            <element signature="n#!!block;n#toggleSidebar#0" expanded="false" />
+            <element signature="n#!!block;n#update#0" expanded="false" />
             <element signature="n#!!block;n#zoomChart#0" expanded="false" />
             <element signature="n#!!block;n#drawItems#0" expanded="false" />
-            <marker date="1513614273076" expanded="true" signature="2923:2938" ph="..." />
-            <marker date="1513614273076" expanded="true" signature="9895:9902" ph="×" />
+            <element signature="n#!!block;n#showPopup#0" expanded="false" />
+            <marker date="1513615048170" expanded="true" signature="2923:2938" ph="..." />
+            <marker date="1513615048170" expanded="true" signature="13000:13007" ph="×" />
           </folding>
         </state>
       </provider>
