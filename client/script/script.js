@@ -183,6 +183,7 @@ function toggleSidebar() {
 */
 function update(rate) {
     var map = AmCharts.makeChart("mapdiv", mapSettings);
+    speed_tracking = [];
 
     setInterval(function () {
         loadPlanes();
@@ -190,7 +191,7 @@ function update(rate) {
 
         //Keeps user zoom and position of the map
         //map.dataProvider.zoomLevel = map.zoomLevel();
-        map.dataProvider.zoomLatitude = map.zoomLatitude();
+        map.dataProvider.zoomLatitude = map.zoomLatitude()+0.001;
         map.dataProvider.zoomLongitude = map.zoomLongitude();
 
         //Refreshes objects
@@ -319,6 +320,18 @@ function loadPlanes() {
                     $('.alert').fadeIn(1000);
                     setTimeout(function(){$('.alert').fadeOut(1000)}, 4000);
                 }
+            }
+        }
+        //Clean speed tracking array and deletes useless objects
+        for (var t in speed_tracking){
+            var ok = false;
+            for (var a in aircrafts){
+                if(speed_tracking[t].id === aircrafts[a].id)
+                    ok = true;
+            }
+            if(!ok) {
+                //alert("aircraft out of range");
+                speed_tracking.splice(t, 1);
             }
         }
     })
