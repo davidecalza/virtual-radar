@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c2de198-4549-4293-b2f1-cd0d0615cdfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -299,7 +298,7 @@
       <workItem from="1513612526063" duration="920000" />
       <workItem from="1513613461018" duration="1782000" />
       <workItem from="1513852140254" duration="226000" />
-      <workItem from="1513856986546" duration="96000" />
+      <workItem from="1513856986546" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="Added /All query to webservice">
       <created>1512417618335</created>
@@ -574,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513615242282</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Added favicon.png">
+      <created>1513857097354</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1513857097355</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99730000" />
+    <option name="totallyTimeSpent" value="99819000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,7 +678,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Allowed users navigation around the map (zoom blocked due to range SVG object getting bigger as the zoom increases)" />
     <MESSAGE value="Added onClick function on airplane objects" />
     <MESSAGE value="Added sidebar toggle function on planes click" />
     <MESSAGE value="Working sidebar displaying aircrafts informations" />
@@ -697,7 +702,8 @@
     <MESSAGE value="Update readme" />
     <MESSAGE value="Speed array cleaning on aircraft getting out of range" />
     <MESSAGE value="Popup show on plane leaving the range" />
-    <option name="LAST_COMMIT_MESSAGE" value="Popup show on plane leaving the range" />
+    <MESSAGE value="Added favicon.png" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added favicon.png" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
