@@ -5,6 +5,7 @@ The project contains both client and server side.
 ## Prerequisites
 
 * Node (to run the web service)
+* MySQL
 
 ## To manage the database
 Go to the **./server/conf** folder.
@@ -35,7 +36,7 @@ WP_IP = "192.168.1.20";
 
 #### Credits
 * [AmCharts](https://www.amcharts.com/) 
-* [Flaticon](https://www.flaticon.com/)
+* Icons made by [Flaticon](https://www.flaticon.com/)
 
 
 
