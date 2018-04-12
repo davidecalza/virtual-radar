@@ -36,7 +36,7 @@ WP_IP = "192.168.1.20";
 
 #### Credits
 * [AmCharts](https://www.amcharts.com/) 
-* Icons made by [Flaticon](https://www.flaticon.com/)
+* [Flaticon](https://www.flaticon.com/)
 
 
 
